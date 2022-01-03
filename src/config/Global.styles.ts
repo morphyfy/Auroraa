@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import AuroraReader from "./Font/AuroraReader.otf";
+import AuroraReader from "./font/AuroraReader.otf";
 
 export const globalStyles = css`
   @font-face {
