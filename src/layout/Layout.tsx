@@ -1,8 +1,8 @@
 import React, { ReactNode } from "react";
-import { globalStyles } from "@config/global.styles";
 import { Global } from "@emotion/react";
 import Footer from "./components/FooterComponents/Footer";
 import Header from "./components/HeaderComponents/Header";
+import globalStyles from "@styles/global.styles";
 
 interface LayoutProps {
   children: ReactNode;

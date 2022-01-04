@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 
-export const globalStyles = css`
+const globalStyles = css`
   @font-face {
     font-family: "Croxy";
     src: url("/font/Croxy.otf") format("opentype");
@@ -13,3 +13,5 @@ export const globalStyles = css`
     font-family: "Croxy";
   }
 `;
+
+export default globalStyles;
