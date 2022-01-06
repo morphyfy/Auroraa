@@ -7,7 +7,9 @@ const Home: NextPage = () => {
   return (
     <Layout>
       <SEO title="Welcome" />
-      <div>Testing Eslint, Prettier, Husky and Setup</div>
+      <div>
+        <p>Hello World!</p>
+      </div>
     </Layout>
   );
 };

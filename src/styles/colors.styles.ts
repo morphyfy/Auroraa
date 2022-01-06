@@ -1,3 +1,3 @@
-const colors: any = [];
-
-export default colors;
+export const colors = {
+  gray: "#67788A",
+};
