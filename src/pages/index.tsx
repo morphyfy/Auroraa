@@ -1,16 +1,13 @@
-import { SEO } from "@components/index";
-import Layout from "@layout/Layout";
+import SEO from "@components/SEOComponents/SEO";
 import type { NextPage } from "next";
 import React from "react";
 
 const Home: NextPage = () => {
   return (
-    <Layout>
+    <div>
       <SEO title="Welcome" />
-      <div>
-        <p>Hello World!</p>
-      </div>
-    </Layout>
+      <h1>We Make Something Interest</h1>
+    </div>
   );
 };
 

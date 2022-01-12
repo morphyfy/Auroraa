@@ -12,16 +12,17 @@ const globalStyles = css`
     src: url("/font/Croxify-reg.otf") format("opentype");
   }
 
+  @font-face {
+    font-family: "Guillon-blvd";
+    src: url("/font/Guillon-blvd.otf") format("opentype");
+  }
+
   * {
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
     color: ${colors.gray};
-    font-family: "AuroraaBold";
-  }
-
-  h1 {
-    font-size: 35px;
+    font-family: "Guillon-blvd";
   }
 `;
 

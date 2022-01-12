@@ -15,7 +15,7 @@ const Layout = (props: LayoutProps) => {
     <React.Fragment>
       <Global styles={globalStyles} />
       <Header />
-      <div>{children}</div>
+      <div className="container">{children}</div>
       <Footer />
     </React.Fragment>
   );
