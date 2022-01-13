@@ -4,7 +4,7 @@ import React from "react";
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <div className="wrapper">
       <SEO title="Welcome" />
       <h1>We Make Something Interest</h1>
     </div>
