@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { Global } from "@emotion/react";
-import Footer from "./components/FooterComponents/Footer";
-import Header from "./components/HeaderComponents/Header";
+import Footer from "./components/Footer/footer";
+import Header from "./components/Header/header";
 import globalStyles from "@styles/global.styles";
 
 interface LayoutProps {
@@ -15,7 +15,7 @@ const Layout = (props: LayoutProps) => {
     <React.Fragment>
       <Global styles={globalStyles} />
       <Header />
-      <div className="container">{children}</div>
+      <main className="wrapper __wrapper-contents">{children}</main>
       <Footer />
     </React.Fragment>
   );

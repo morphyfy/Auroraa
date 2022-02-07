@@ -8,9 +8,7 @@ type HelmetProps = {
 const SEO = (props: HelmetProps) => {
   return (
     <Head>
-      <title>
-        {props.title} | Auroraa, a blog post for programmer and developer
-      </title>
+      <title>{props.title} | Auroraa</title>
       <meta
         name="description"
         property="og:title"

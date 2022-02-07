@@ -1,28 +1,26 @@
 import { css } from "@emotion/react";
-import { colors } from "./colors.styles";
 
 const globalStyles = css`
+  @import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&display=swap");
+
   @font-face {
     font-family: "AuroraaBold";
-    src: url("/font/Croxify-bold.otf") format("opentype");
+    src: url("/font/FacebookReaderBold.otf") format("opentype");
   }
 
   @font-face {
     font-family: "AuroraaReg";
-    src: url("/font/Croxify-reg.otf") format("opentype");
-  }
-
-  @font-face {
-    font-family: "Guillon-blvd";
-    src: url("/font/Guillon-blvd.otf") format("opentype");
+    src: url("/font/FacebookReaderMed.otf") format("opentype");
   }
 
   * {
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
-    color: ${colors.gray};
-    font-family: "Guillon-blvd";
+  }
+
+  a {
+    text-decoration: none;
   }
 `;
 

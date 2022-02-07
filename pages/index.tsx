@@ -1,4 +1,4 @@
-import SEO from "@components/SEOComponents/SEO";
+import SEO from "@components/MetaData/SEO";
 import type { NextPage } from "next";
 import React from "react";
 
