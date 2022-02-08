@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import { Global } from "@emotion/react";
 import Footer from "./components/Footer/footer";
 import Header from "./components/Header/header";
-import globalStyles from "@styles/global.styles";
+import { globalStyles } from "@styles/global.styles";
 
 interface LayoutProps {
   children: ReactNode;

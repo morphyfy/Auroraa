@@ -1,8 +1,8 @@
 import React from "react";
+import Layout from "@layout/Layout";
 import { AppProps } from "next/app";
 import { Global } from "@emotion/react";
-import Layout from "@layout/Layout";
-import globalStyles from "@styles/global.styles";
+import { globalStyles } from "@styles/global.styles";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

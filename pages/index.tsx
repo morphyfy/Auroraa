@@ -1,13 +1,13 @@
 import SEO from "@components/MetaData/SEO";
+import { Container } from "@styles/global.styles";
 import type { NextPage } from "next";
 import React from "react";
 
 const Home: NextPage = () => {
   return (
-    <div className="wrapper">
+    <Container>
       <SEO title="Welcome" />
-      <h1>We Make Something Interest</h1>
-    </div>
+    </Container>
   );
 };
 
