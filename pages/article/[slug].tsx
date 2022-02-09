@@ -13,6 +13,7 @@ import convertToTitle from "@utils/slugToTitle";
 import hljs from "highlight.js";
 import SEO from "@components/MetaData/SEO";
 import "highlight.js/styles/stackoverflow-dark.css";
+import Sidebar from "@layout/components/Sidebar/sidebar";
 
 type Params = {
   [param: string]: any;
@@ -61,6 +62,7 @@ export default function Article({
 
   return (
     <Container>
+      <Sidebar />
       <SEO title={convertToTitle(title)} />
       <ArticleHeader
         altImage={altImage}

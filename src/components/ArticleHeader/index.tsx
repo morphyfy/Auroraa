@@ -63,7 +63,7 @@ const AuthorDataContainer = styled.div`
   max-width: 100%;
   width: 350px;
   display: flex;
-  margin: 30px 0px 50px;
+  margin: 50px 0px;
   align-items: center;
 `;
 

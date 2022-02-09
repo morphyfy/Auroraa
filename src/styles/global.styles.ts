@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
-import styled from "@emotion/styled";
 import { colors, maxWidth } from "./variable.styles";
+import styled from "@emotion/styled";
 
 export const globalStyles = css`
   @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap");
