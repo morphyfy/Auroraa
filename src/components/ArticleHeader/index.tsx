@@ -3,8 +3,7 @@ import React from "react";
 import NextImage from "next/image";
 import { maxWidth } from "@styles/variable.styles";
 import { MetaData } from "@interface/MetaData";
-import Tippy from "@tippyjs/react";
-import "tippy.js/dist/tippy.css"; // optional
+
 import Link from "next/link";
 
 interface ArticleHeaderProps extends MetaData {}
@@ -88,49 +87,15 @@ const DateTitle = styled.p`
   font-size: 14px;
   opacity: 0.8;
   font-family: "FacebookReaderM", sans-serif;
-`;
 
-const ToolTipWrapper = styled.div`
-  max-width: 100%;
-`;
-
-const ContentTooltip = styled.p`
-  font-family: "FacebookReaderM", sans-serif;
-  font-size: 14px;
-  max-width: 100%;
-  margin: 8px 0px 10px;
-`;
-
-const ButtonTooltip = styled.button`
-  outline: none;
-  font-family: "FacebookReaderM", sans-serif;
-  border: 2px solid skyblue;
-  background: transparent;
-  color: #fff;
-  width: 100%;
-  font-size: 13px;
-  border-radius: 2px;
-  padding: 7px;
-  margin-bottom: 10px;
-  cursor: pointer;
+  @media screen and (max-width: 280px) {
+    font-size: 13px;
+  }
 `;
 
 const ArticleHeader: React.FC<ArticleHeaderProps> = (props) => {
   // your profile nick username
   const authorUsername = "ioofy";
-
-  const Content = () => {
-    return (
-      <ToolTipWrapper>
-        <ContentTooltip>Author in this Article</ContentTooltip>
-        <Link href={`/author/${authorUsername}`} passHref>
-          <a target="_blank">
-            <ButtonTooltip>Profile</ButtonTooltip>
-          </a>
-        </Link>
-      </ToolTipWrapper>
-    );
-  };
 
   return (
     <HeaderArticleWrapper>
@@ -142,19 +107,13 @@ const ArticleHeader: React.FC<ArticleHeaderProps> = (props) => {
           alt="Author"
         />
         <AsideRight>
-          <div>
-            <Tippy
-              content={<Content />}
-              placement="bottom"
-              interactive
-              allowHTML
-            >
+          <Link href={`/author/${authorUsername}`} passHref>
+            <a target="_blank">
               <AuthorName id="author">Muhamad Rizky</AuthorName>
-            </Tippy>
-          </div>
-
+            </a>
+          </Link>
           <DateTitle>
-            {props.dateString} · {props.longtimeRead} min read
+            {props.dateString} · 👁️ {props.longtimeRead} min read
           </DateTitle>
         </AsideRight>
       </AuthorDataContainer>

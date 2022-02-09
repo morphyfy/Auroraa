@@ -4,6 +4,7 @@ import { maxWidth } from "./variable.styles";
 
 export const globalStyles = css`
   @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Prata&display=swap");
 
   @font-face {
     font-family: "FacebookReaderB";

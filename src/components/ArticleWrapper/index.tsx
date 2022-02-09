@@ -23,6 +23,7 @@ const WrapperArticle = styled.div`
   code,
   table,
   thead,
+  blockquote,
   tbody,
   tr,
   th,
@@ -36,10 +37,23 @@ const WrapperArticle = styled.div`
     font-size: 14px;
   }
 
+  blockquote {
+    text-align: center;
+    font-style: italic;
+
+    p {
+      font-family: "Prata", serif;
+      font-size: 2rem !important;
+      opacity: 0.8;
+      line-height: 1.2em;
+    }
+  }
+
   a {
     text-decoration: underline;
     text-decoration-style: dotted;
     text-underline-offset: 4px;
+    color: #ff9b9a;
   }
 
   h2 {
@@ -103,6 +117,12 @@ const WrapperArticle = styled.div`
 
     em {
       font-size: 13px;
+    }
+
+    blockquote {
+      p {
+        font-size: 1.5rem !important;
+      }
     }
   }
 `;
