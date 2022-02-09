@@ -15,11 +15,11 @@ export const globalStyles = css`
   }
 
   body {
-    background: ${colors.white};
+    background: ${colors.dark};
   }
 
   * {
-    color: ${colors.dark};
+    color: ${colors.white};
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
