@@ -23,21 +23,54 @@ My favorite search engine is [Duck Duck Go Go](https://duckduckgo.com).
 | :------------------------------------------------------------------------------------------------------: |
 | _Language Server TypeScript di VSCode memberi tahu bahwa yang sedang diakses mempunyai tipe data number_ |
 
+code Typescript :
+
 ```ts
-class MyClass {
-  public static myValue: string;
-  constructor(init: string) {
-    this.myValue = init;
+import { css } from "@emotion/react";
+import styled from "@emotion/styled";
+import { colors, maxWidth } from "./variable.styles";
+```
+
+code CSS :
+
+```css
+export const globalStyles = css`
+  @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Prata&display=swap");
+
+  @font-face {
+    font-family: "FacebookReaderB";
+    src: url("/font/FacebookReaderBold.otf") format("opentype");
   }
-}
-import fs = require("fs");
-module MyModule {
-  export interface MyInterface extends Other {
-    myProperty: any;
+
+  @font-face {
+    font-family: "FacebookReaderM";
+    src: url("/font/FacebookReaderMed.otf") format("opentype");
   }
-}
-declare magicNumber number;
-myArray.forEach(() => { }); // fat arrow syntax
+
+  body {
+    background: #0f0e0e;
+  }
+
+  * {
+    color: #efefef;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+  }
+`;
+
+export const Container = styled.div`
+  z-index: 1;
+  width: 100%;
+  max-width: ${maxWidth.large};
+  margin: 0px auto;
+  padding: 15px;
+
+  @media screen and (max-width: 991px) {
+    padding: 0px;
+  }
+`;
 ```
 
 > "Somewhere, something incredible is waiting to be known"

@@ -1,10 +1,9 @@
 import styled from "@emotion/styled";
 import React from "react";
 import NextImage from "next/image";
+import Link from "next/link";
 import { maxWidth } from "@styles/variable.styles";
 import { MetaData } from "@interface/MetaData";
-
-import Link from "next/link";
 
 interface ArticleHeaderProps extends MetaData {}
 
@@ -43,7 +42,7 @@ const Image = styled(NextImage)`
 `;
 
 const FigCaptions = styled.figcaption`
-  margin: auto;
+  margin: 10px auto;
   font-family: "FacebookReaderM", sans-serif;
   font-size: 15px;
   opacity: 0.8;
@@ -113,7 +112,7 @@ const ArticleHeader: React.FC<ArticleHeaderProps> = (props) => {
             </a>
           </Link>
           <DateTitle>
-            {props.dateString} · 👁️ {props.longtimeRead} min read
+            {props.dateString} • 👁️ {props.longtimeRead} min read
           </DateTitle>
         </AsideRight>
       </AuthorDataContainer>

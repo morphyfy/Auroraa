@@ -18,6 +18,7 @@ const WrapperArticle = styled.div`
   p,
   ul,
   ol,
+  hr,
   li,
   pre,
   code,
@@ -29,12 +30,41 @@ const WrapperArticle = styled.div`
   th,
   td,
   img {
-    margin: 40px 0px;
+    margin: 25px 0px;
   }
 
-  code {
-    font-family: "Fira Code";
-    font-size: 14px;
+  p {
+    code {
+      padding: 4px;
+      background: #373c49;
+      color: #fff;
+      border-radius: 2px;
+      font-family: "FacebookReaderB", sans-serif;
+      font-size: 13px;
+    }
+  }
+
+  p {
+    em {
+      font-family: "FacebookReaderB", sans-serif;
+      font-size: 17px;
+      opacity: 1;
+      line-height: 1.5;
+    }
+  }
+
+  pre {
+    code {
+      font-family: "Fira Code", monospace;
+      font-size: 16px;
+      border-radius: 2px;
+
+      .hljs-tag,
+      .hljs-function,
+      .hljs-params {
+        color: #fff;
+      }
+    }
   }
 
   blockquote {
@@ -42,9 +72,9 @@ const WrapperArticle = styled.div`
     font-style: italic;
 
     p {
-      font-family: "Prata", serif;
+      font-weight: bold;
       font-size: 2rem !important;
-      opacity: 0.8;
+      opacity: 0.9;
       line-height: 1.2em;
     }
   }
@@ -53,7 +83,7 @@ const WrapperArticle = styled.div`
     text-decoration: underline;
     text-decoration-style: dotted;
     text-underline-offset: 4px;
-    color: #ff9b9a;
+    color: #fa8583;
   }
 
   h2 {
@@ -72,23 +102,23 @@ const WrapperArticle = styled.div`
 
   p {
     font-family: "FacebookReaderM", sans-serif;
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.6em;
   }
 
   img {
+    border-radius: 5px !important;
     display: flex;
     justify-content: center;
     width: ${maxWidth.medium};
     height: 500px;
-    margin: 0px auto 10px;
+    margin: 0px auto 5px;
     object-fit: contain;
   }
 
   em {
     font-family: "FacebookReaderM", sans-serif;
     font-size: 15px;
-    font-style: normal;
     opacity: 0.8;
   }
 

@@ -1,11 +1,9 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import { maxWidth } from "./variable.styles";
+import { colors, maxWidth } from "./variable.styles";
 
 export const globalStyles = css`
   @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap");
-  @import url("https://fonts.googleapis.com/css2?family=Prata&display=swap");
-
   @font-face {
     font-family: "FacebookReaderB";
     src: url("/font/FacebookReaderBold.otf") format("opentype");
@@ -17,11 +15,11 @@ export const globalStyles = css`
   }
 
   body {
-    background: #0f0e0e;
+    background: ${colors.white};
   }
 
   * {
-    color: #efefef;
+    color: ${colors.dark};
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
