@@ -37,10 +37,10 @@ export default function Article({
 
   const Comments = () => {
     // your disquss shortname from https://disqus.com/admin/
-    const disqusShortname = "rizkyy27";
+    const disqusShortname = process.env.NEXT_PUBLIC_DISQUS_SHORTNAME;
 
     const disqusConfig = {
-      url: `http://localhost:3000/article/${title}`,
+      url: `${process.env.NEXT_API_PUBLIC_URL}/article/${title}`,
       identifier: title,
       title: title,
     };

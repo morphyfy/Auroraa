@@ -56,7 +56,7 @@ const WrapperArticle = styled.div`
   pre {
     code {
       font-family: "Fira Code", monospace;
-      font-size: 16px;
+      font-size: 15px;
       border-radius: 2px;
 
       .hljs-tag,
