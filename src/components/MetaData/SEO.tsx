@@ -12,10 +12,13 @@ const SEO = (props: HelmetProps) => {
       <meta
         name="description"
         property="og:title"
-        content="AFF Utama"
-        key="Auroraa, Articlepost, ioofy, rizukyy, aurora.com"
+        content="Auroraa 🦄 | A place to share any ideas, thoughts, or stories."
+        key="Auroraa, blogpost, ioofy, rizukyy, auroraa"
       />
-      <meta name="keywords" content="auroraa, aurora, auroraa.com"></meta>
+      <meta
+        name="keywords"
+        content="auroraa, blog, nextjs-blog, mdx-blog"
+      ></meta>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
