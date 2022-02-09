@@ -13,7 +13,7 @@ const SEO = (props: HelmetProps) => {
         name="description"
         property="og:title"
         content="AFF Utama"
-        key="Auroraa, Blogpost, ioofy, rizukyy, aurora.com"
+        key="Auroraa, Articlepost, ioofy, rizukyy, aurora.com"
       />
       <meta name="keywords" content="auroraa, aurora, auroraa.com"></meta>
       <meta name="viewport" content="width=device-width, initial-scale=1" />

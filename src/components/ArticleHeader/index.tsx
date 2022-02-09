@@ -3,10 +3,13 @@ import React from "react";
 import NextImage from "next/image";
 import { maxWidth } from "@styles/variable.styles";
 import { MetaData } from "@interface/MetaData";
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css"; // optional
+import Link from "next/link";
 
-interface BlogHeaderProps extends MetaData {}
+interface ArticleHeaderProps extends MetaData {}
 
-const HeaderBlogWrapper = styled.div`
+const HeaderArticleWrapper = styled.div`
   width: ${maxWidth.medium};
   max-width: 100%;
   margin: auto;
@@ -87,9 +90,50 @@ const DateTitle = styled.p`
   font-family: "FacebookReaderM", sans-serif;
 `;
 
-const BlogHeader: React.FC<BlogHeaderProps> = (props) => {
+const ToolTipWrapper = styled.div`
+  max-width: 100%;
+`;
+
+const ContentTooltip = styled.p`
+  font-family: "FacebookReaderM", sans-serif;
+  font-size: 14px;
+  max-width: 100%;
+  margin: 8px 0px 10px;
+`;
+
+const ButtonTooltip = styled.button`
+  outline: none;
+  font-family: "FacebookReaderM", sans-serif;
+  border: 2px solid skyblue;
+  background: transparent;
+  color: #fff;
+  width: 100%;
+  font-size: 13px;
+  border-radius: 2px;
+  padding: 7px;
+  margin-bottom: 10px;
+  cursor: pointer;
+`;
+
+const ArticleHeader: React.FC<ArticleHeaderProps> = (props) => {
+  // your profile nick username
+  const authorUsername = "ioofy";
+
+  const Content = () => {
+    return (
+      <ToolTipWrapper>
+        <ContentTooltip>Author in this Article</ContentTooltip>
+        <Link href={`/author/${authorUsername}`} passHref>
+          <a target="_blank">
+            <ButtonTooltip>Profile</ButtonTooltip>
+          </a>
+        </Link>
+      </ToolTipWrapper>
+    );
+  };
+
   return (
-    <HeaderBlogWrapper>
+    <HeaderArticleWrapper>
       <AuthorDataContainer>
         <AuthorImage
           src="https://avatars.githubusercontent.com/u/77242429?v=4"
@@ -98,7 +142,17 @@ const BlogHeader: React.FC<BlogHeaderProps> = (props) => {
           alt="Author"
         />
         <AsideRight>
-          <AuthorName>Ioofy.</AuthorName>
+          <div>
+            <Tippy
+              content={<Content />}
+              placement="bottom"
+              interactive
+              allowHTML
+            >
+              <AuthorName id="author">Muhamad Rizky</AuthorName>
+            </Tippy>
+          </div>
+
           <DateTitle>
             {props.dateString} · {props.longtimeRead} min read
           </DateTitle>
@@ -110,13 +164,13 @@ const BlogHeader: React.FC<BlogHeaderProps> = (props) => {
         <Image
           src={props.mainImageUrl}
           alt={props.altImage}
-          height={450}
+          height={430}
           width={850}
         />
         <FigCaptions>{props.altImage}</FigCaptions>
       </ImageFigure>
-    </HeaderBlogWrapper>
+    </HeaderArticleWrapper>
   );
 };
 
-export default BlogHeader;
+export default ArticleHeader;

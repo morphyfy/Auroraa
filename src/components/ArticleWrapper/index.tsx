@@ -2,11 +2,11 @@ import React, { ReactNode } from "react";
 import styled from "@emotion/styled";
 import { maxWidth } from "@styles/variable.styles";
 
-type WrapperBlogProps = {
+type WrapperArticleProps = {
   children: ReactNode;
 };
 
-const WrapperBlog = styled.div`
+const WrapperArticle = styled.div`
   width: ${maxWidth.medium};
   max-width: 100%;
   margin: auto;
@@ -39,7 +39,7 @@ const WrapperBlog = styled.div`
   a {
     text-decoration: underline;
     text-decoration-style: dotted;
-    text-underline-offset: 3px;
+    text-underline-offset: 4px;
   }
 
   h2 {
@@ -107,8 +107,8 @@ const WrapperBlog = styled.div`
   }
 `;
 
-const BlogWrapper: React.FC<WrapperBlogProps> = ({ children }) => {
-  return <WrapperBlog>{children}</WrapperBlog>;
+const ArticleWrapper: React.FC<WrapperArticleProps> = ({ children }) => {
+  return <WrapperArticle>{children}</WrapperArticle>;
 };
 
-export default BlogWrapper;
+export default ArticleWrapper;

@@ -34,7 +34,8 @@
       "@styles/*": ["src/styles/*"],
       "@layout/*": ["src/layout/*"],
       "@utils/*": ["src/utils/*"],
-      "@interface/*": ["src/interface/*"]
+      "@interface/*": ["src/interface/*"],
+      "@data/*": ["src/data/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

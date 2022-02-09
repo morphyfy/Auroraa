@@ -3,12 +3,15 @@ import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { Container } from "@styles/global.styles";
+import { DiscussionEmbed } from "disqus-react";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import BlogHeader from "@components/BlogHeader";
-import BlogWrapper from "@components/BlogWrapper";
+import ArticleHeader from "@components/ArticleHeader";
+import ArticleWrapper from "@components/ArticleWrapper";
+import convertToTitle from "@utils/slugToTitle";
 import hljs from "highlight.js";
+import SEO from "@components/MetaData/SEO";
 import "highlight.js/styles/tomorrow-night-bright.css";
 
 type Params = {
@@ -19,6 +22,12 @@ type ArticleProps = {
   source: MDXRemoteSerializeResult<Record<string, unknown>>;
 };
 
+type DisqusConfig = {
+  url: string;
+  identifier: string | unknown | any;
+  title: string | unknown | any;
+};
+
 export default function Article({
   source,
 }: ArticleProps): InferGetStaticPropsType<typeof getStaticProps> {
@@ -26,13 +35,34 @@ export default function Article({
     scope: { dateString, mainImageUrl, title, excerpt, longtimeRead, altImage },
   } = source;
 
+  const Comments = () => {
+    // your disquss shortname from https://disqus.com/admin/
+    const disqusShortname = "rizkyy27";
+
+    const disqusConfig = {
+      url: `http://localhost:3000/article/${title}`,
+      identifier: title,
+      title: title,
+    };
+
+    return (
+      <div>
+        <DiscussionEmbed
+          shortname={disqusShortname}
+          config={disqusConfig as DisqusConfig}
+        />
+      </div>
+    );
+  };
+
   useEffect(() => {
     hljs.highlightAll();
   }, []);
 
   return (
     <Container>
-      <BlogHeader
+      <SEO title={convertToTitle(title)} />
+      <ArticleHeader
         altImage={altImage}
         longtimeRead={longtimeRead}
         excerpt={excerpt}
@@ -40,9 +70,10 @@ export default function Article({
         dateString={dateString}
         mainImageUrl={mainImageUrl}
       />
-      <BlogWrapper>
+      <ArticleWrapper>
         <MDXRemote {...source} />
-      </BlogWrapper>
+        <Comments />
+      </ArticleWrapper>
     </Container>
   );
 }
