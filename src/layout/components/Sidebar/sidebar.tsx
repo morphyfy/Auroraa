@@ -17,7 +17,7 @@ const SidebarWrapper = styled.div`
   }
 
   @media screen and (max-width: 991px) {
-    margin-left: -60px;
+    margin-left: -80px;
     margin-top: -30px;
   }
 

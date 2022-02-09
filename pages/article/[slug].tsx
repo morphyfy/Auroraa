@@ -12,8 +12,8 @@ import ArticleWrapper from "@components/ArticleWrapper";
 import convertToTitle from "@utils/slugToTitle";
 import hljs from "highlight.js";
 import SEO from "@components/MetaData/SEO";
-import "highlight.js/styles/stackoverflow-dark.css";
 import Sidebar from "@layout/components/Sidebar/sidebar";
+import "highlight.js/styles/stackoverflow-dark.css";
 
 type Params = {
   [param: string]: any;
