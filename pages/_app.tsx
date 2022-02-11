@@ -3,13 +3,16 @@ import Layout from "@layout/Layout";
 import { AppProps } from "next/app";
 import { Global } from "@emotion/react";
 import { globalStyles } from "@styles/global.styles";
+import ThemeProviders from "@config/themeProvider";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
-      <Global styles={globalStyles} />
-      <Component {...pageProps} />
-    </Layout>
+    <ThemeProviders>
+      <Layout>
+        <Global styles={globalStyles} />
+        <Component {...pageProps} />
+      </Layout>
+    </ThemeProviders>
   );
 }
 

@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { colors, maxWidth } from "./variable.styles";
+import { maxWidth } from "./variable.styles";
 import styled from "@emotion/styled";
 
 export const globalStyles = css`
@@ -17,17 +17,6 @@ export const globalStyles = css`
 
   html {
     scroll-behavior: smooth;
-  }
-
-  body {
-    background: ${colors.dark};
-  }
-
-  * {
-    color: ${colors.white};
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
   }
 `;
 

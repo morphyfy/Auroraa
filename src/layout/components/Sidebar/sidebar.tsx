@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import * as BoxIcons from "react-icons/bi";
 import NextImage from "next/image";
-import { data as sidebarData } from "./constant";
+import { data as sidebarData } from "../constant";
 
 const SidebarWrapper = styled.div`
   margin-top: -20px;
@@ -20,7 +20,7 @@ const SidebarWrapper = styled.div`
 
   @media screen and (max-width: 991px) {
     margin-left: -75px;
-    margin-top: -50px;
+    margin-top: -40px;
   }
 
   @media screen and (max-width: 912px) {
