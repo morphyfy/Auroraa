@@ -13,25 +13,27 @@ di internet. Tetapi hampir semua tutorial menggunakan Bahasa Inggris tentunya xi
 versinya menggunakan Bahasa Indonesia.
 
 Nah pada kali ini saya ingin membuat tutorial ini dengan bahasa Indonesia.
-Gimana sih caranya kirim email menggunakan template bagus? Ini cocok untuk kalian yang ingin pasang contact form yang
-ada di web kamu dan mendapatkan pesan dari pengunjung yang mengunjugi web kamu tentunya. atau ingin mengirim email verification untuk register ke app yang kamu buat
+Gimana sih caranya kirim email menggunakan template bagus? Ini cocok untuk kamu yang ingin pasang contact form yang
+ada di web kamu dan mendapatkan pesan dari pengunjung yang mengunjugi web kamu tentunya, atau ingin mengirim
+email verification user register dari app yang kamu buat
 
-Bahan yang kamu perlu untuk membuat template email ini adalah :
+Bahan yang kamu perlu adalah :
 
 - Nodejs
 - Handlebars
 - Nodemailer
 - Dan Nextjs untuk web framework yang digunakan
 
-Kenapa saya menggunakan Nextjs? Karena di Nextjs disediakan fitur serverless
-untuk api route dengan Nodejs menggunakan vercel sebagai servernya.
+Kenapa saya menggunakan Nextjs? Karena di Nextjs disediakan fitur untuk api route
+dengan Nodejs dan digabungkan dengan vercel sebagai server hostnya.
 Kalian bisa pakai framework lain untuk membuat custom api route sendiri.
 
 ## 1. Buat repository baru
 
 yang paling penting adalah kalian harus buat repository yang ingin kalian gunakan😁.
-buat repo nextjs menggunakan [Create-Next-App](https://nextjs.org/docs/api-reference/create-next-app).
-Disini saya pakai typescript bisa pakai bash ini `yarn create next-app --typescript`
+buat repo nextjs menggunakan [Create-Next-App](https://nextjs.org/docs/api-reference/create-next-app)
+Disini saya pakai typescript kalian bisa pakai bash ini kalau ingin menggunakan typescript
+`yarn create next-app --typescript`
 
 lalu buka folder `pages/api` dan buat file `verification.ts`
 dan jangan lupa install semua dependencies yang saya sebutkan diatas :
