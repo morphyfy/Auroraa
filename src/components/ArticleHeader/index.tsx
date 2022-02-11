@@ -31,6 +31,7 @@ const Heading = styled.h1`
 const Excerpt = styled.h2`
   font-size: 1.2rem;
   opacity: 0.8;
+  line-height: 1.3;
   font-family: "FacebookReaderM", sans-serif;
   margin: 0px 0px 40px;
 `;

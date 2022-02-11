@@ -41,7 +41,7 @@ const WrapperArticle = styled.div`
       border-radius: 2px;
       font-family: "FacebookReaderB", sans-serif;
       font-size: 13px;
-      margin: 0 4px;
+      margin: 0 2px;
     }
   }
 
@@ -78,6 +78,15 @@ const WrapperArticle = styled.div`
       font-size: 2rem !important;
       opacity: 0.9;
       line-height: 1.2em;
+    }
+  }
+
+  ul {
+    list-style-type: square;
+    padding: 0px 15px;
+    li {
+      font-family: "FacebookReaderB", sans-serif;
+      font-size: 18px;
     }
   }
 
