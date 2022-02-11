@@ -6,7 +6,7 @@ import NextImage from "next/image";
 import { data as sidebarData } from "../constant";
 
 const SidebarWrapper = styled.div`
-  margin-top: -20px;
+  margin-top: -15px;
   display: -webkit-box;
   margin-left: -200px;
   border-right: 1px solid rgb(202, 198, 198);

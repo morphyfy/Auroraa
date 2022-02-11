@@ -13,6 +13,7 @@ const Layout = (props: LayoutProps) => {
   const router = useRouter();
   const { children } = props;
 
+  // replace data from default layout to custom
   const showLayout = router.pathname === "/article/[slug]" ? false : true;
 
   return (

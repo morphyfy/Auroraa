@@ -15,6 +15,11 @@ export const globalStyles = css`
     src: url("/font/FacebookReaderMed.otf") format("opentype");
   }
 
+  @font-face {
+    font-family: "charter";
+    src: url("/font/Charter.otf") format("opentype");
+  }
+
   html {
     scroll-behavior: smooth;
   }

@@ -98,7 +98,7 @@ const DateTitle = styled.p`
 
 const ArticleHeader: React.FC<ArticleHeaderProps> = (props) => {
   // your profile nick username
-  const authorUsername = "ioofy";
+  const authorUsername = "Ioofy🤖";
 
   return (
     <HeaderArticleWrapper>
@@ -112,7 +112,7 @@ const ArticleHeader: React.FC<ArticleHeaderProps> = (props) => {
         <AsideRight>
           <Link href={`/author/${authorUsername}`} passHref>
             <a target="_blank">
-              <AuthorName id="author">Muhamad Rizky</AuthorName>
+              <AuthorName id="author">{authorUsername}.</AuthorName>
             </a>
           </Link>
           <DateTitle>

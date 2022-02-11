@@ -41,6 +41,7 @@ const WrapperArticle = styled.div`
       border-radius: 2px;
       font-family: "FacebookReaderB", sans-serif;
       font-size: 13px;
+      margin: 0 4px;
     }
   }
 
@@ -72,6 +73,7 @@ const WrapperArticle = styled.div`
     font-style: italic;
 
     p {
+      font-family: "charter", sans-serif;
       font-weight: bold;
       font-size: 2rem !important;
       opacity: 0.9;
@@ -113,11 +115,11 @@ const WrapperArticle = styled.div`
     width: ${maxWidth.medium};
     height: 500px;
     margin: 0px auto 5px;
-    object-fit: contain;
+    object-fit: cover;
   }
 
   em {
-    font-family: "FacebookReaderM", sans-serif;
+    font-family: "charter", sans-serif;
     font-size: 15px;
     opacity: 0.8;
   }
