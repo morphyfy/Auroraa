@@ -14,6 +14,10 @@ export const globalStyles = css`
     src: url("/font/FacebookReaderMed.otf") format("opentype");
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background: ${colors.dark};
   }

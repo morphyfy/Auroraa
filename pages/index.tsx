@@ -6,7 +6,7 @@ import React from "react";
 const Home: NextPage = () => {
   return (
     <Container>
-      <SEO title="Welcome" />
+      <SEO title="Ioofy. Just enthusiast frontend devs want to learn anything." />
     </Container>
   );
 };

@@ -63,7 +63,7 @@ const AuthorDataContainer = styled.div`
   max-width: 100%;
   width: 350px;
   display: flex;
-  margin: 50px 0px;
+  margin: 40px 0px;
   align-items: center;
 `;
 
@@ -74,6 +74,10 @@ const AuthorImage = styled(NextImage)`
 
 const AsideRight = styled.div`
   margin-left: 15px;
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 const AuthorName = styled.p`

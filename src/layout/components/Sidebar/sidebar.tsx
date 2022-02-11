@@ -2,13 +2,28 @@ import styled from "@emotion/styled";
 import Link from "next/link";
 import React from "react";
 import * as BoxIcons from "react-icons/bi";
+import NextImage from "next/image";
+import Header from "../Header/header";
+import { data as sidebarData } from "./constant";
+
+const ContentMain = styled.div`
+  .nav-hidden {
+    display: none;
+  }
+
+  @media screen and (max-width: 912px) {
+    .nav-hidden {
+      display: block;
+    }
+  }
+`;
 
 const SidebarWrapper = styled.div`
-  margin-top: -15px;
+  margin-top: -20px;
   display: -webkit-box;
   margin-left: -200px;
   border-right: 1px solid rgb(202, 198, 198);
-  width: 200px;
+  width: 170px;
   height: 100%;
   position: fixed;
 
@@ -17,11 +32,11 @@ const SidebarWrapper = styled.div`
   }
 
   @media screen and (max-width: 991px) {
-    margin-left: -80px;
-    margin-top: -30px;
+    margin-left: -75px;
+    margin-top: -50px;
   }
 
-  @media screen and (max-width: 834px) {
+  @media screen and (max-width: 912px) {
     display: none;
   }
 `;
@@ -62,50 +77,59 @@ const LogoWrapper = styled.div`
   top: 25px;
 `;
 
+const Logo = styled(NextImage)`
+  object-fit: cover !important;
+`;
+
 const Sidebar = () => {
   return (
-    <SidebarWrapper>
-      <LogoWrapper>
-        <h1>Ioofy.</h1>
-      </LogoWrapper>
-      <SidebarContainer>
-        <SidebarContent>
-          <SidebarMenu>
-            <Link href="/">
-              <a>
-                <SidebarMenuItem>
-                  <BoxIcons.BiHome size={25} />
-                </SidebarMenuItem>
-              </a>
-            </Link>
-            <Link href="/about">
-              <a>
-                <SidebarMenuItem>
-                  <BoxIcons.BiMailSend size={25} />
-                </SidebarMenuItem>
-              </a>
-            </Link>
-            <Link href="/about">
-              <a>
-                <SidebarMenuItem>
-                  <BoxIcons.BiCoffee size={25} />
-                </SidebarMenuItem>
-              </a>
-            </Link>
-            <div style={{ width: "25px", left: "29%", position: "relative" }}>
-              <hr />
-            </div>
-            <Link href="/about">
-              <a>
-                <SidebarMenuItem>
-                  <BoxIcons.BiCommentDots size={25} />
-                </SidebarMenuItem>
-              </a>
-            </Link>
-          </SidebarMenu>
-        </SidebarContent>
-      </SidebarContainer>
-    </SidebarWrapper>
+    <ContentMain>
+      <Header classes="nav-hidden" />
+      <SidebarWrapper>
+        <LogoWrapper>
+          <Logo
+            src="/image/logo.png"
+            height={70}
+            width={70}
+            alt="Logo"
+            layout="intrinsic"
+          />
+        </LogoWrapper>
+        <SidebarContainer>
+          <SidebarContent>
+            <SidebarMenu>
+              {sidebarData.map((item) => {
+                return (
+                  <Link href={item.href} key={item.id}>
+                    <a>
+                      <SidebarMenuItem>
+                        {item.icon === "home" ? (
+                          <BoxIcons.BiHome size={25} />
+                        ) : item.icon === "contact" ? (
+                          <BoxIcons.BiMailSend size={25} />
+                        ) : (
+                          <BoxIcons.BiCoffee size={25} />
+                        )}
+                      </SidebarMenuItem>
+                    </a>
+                  </Link>
+                );
+              })}
+              <div style={{ width: "25px", left: "30%", position: "relative" }}>
+                <hr />
+              </div>
+              <Link href="/chat">
+                <a>
+                  <SidebarMenuItem>
+                    <BoxIcons.BiCommentDots size={25} />
+                  </SidebarMenuItem>
+                </a>
+              </Link>
+            </SidebarMenu>
+          </SidebarContent>
+        </SidebarContainer>
+      </SidebarWrapper>
+    </ContentMain>
   );
 };
 

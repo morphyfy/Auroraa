@@ -8,7 +8,9 @@ type HelmetProps = {
 const SEO = (props: HelmetProps) => {
   return (
     <Head>
-      <title>{props.title} | Auroraa</title>
+      <link rel="icon" href="/image/logo.png" />
+      <meta charSet="utf-8" />
+      <title>{props.title} | Auroraa 🦄</title>
       <meta
         name="description"
         property="og:title"
@@ -20,7 +22,15 @@ const SEO = (props: HelmetProps) => {
         content="auroraa, blog, nextjs-blog, mdx-blog"
       ></meta>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="icon" href="/favicon.ico" />
+      <meta
+        name="twitter:description"
+        content="Auroraa is a template blog for everyone who wants to share their ideas, thoughts, or stories."
+      />
+      <meta
+        name="twitter:title"
+        content="Auroraa 🦄 | A place to share any ideas, thoughts, or stories."
+      />
+      <meta name="twitter:card" content="summary_large_image" />
     </Head>
   );
 };
