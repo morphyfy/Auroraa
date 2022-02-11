@@ -71,7 +71,7 @@ export default function Article({
     <Container>
       <Header classes="nav-hidden" />
       <Sidebar />
-      <SEO title={convertToTitle(title)} />
+      <SEO title={convertToTitle(title)} content={slug} />
       <ArticleHeader
         altImage={altImage}
         longtimeRead={longtimeRead}

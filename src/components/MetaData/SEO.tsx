@@ -3,6 +3,7 @@ import Head from "next/head";
 
 type HelmetProps = {
   title: string;
+  content: string | any;
 };
 
 const SEO = (props: HelmetProps) => {
@@ -14,8 +15,8 @@ const SEO = (props: HelmetProps) => {
       <meta
         name="description"
         property="og:title"
-        content="Auroraa 🦄 | A place to share any ideas, thoughts, or stories."
-        key="Auroraa, blogpost, ioofy, rizukyy, auroraa"
+        content={props.content}
+        key="auroraa, blog, nextjs-blog, mdx-blog"
       />
       <meta
         name="keywords"

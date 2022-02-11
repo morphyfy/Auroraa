@@ -6,7 +6,10 @@ import React from "react";
 const Home: NextPage = () => {
   return (
     <Container>
-      <SEO title="Ioofy. Just enthusiast frontend devs want to learn anything." />
+      <SEO
+        title="Ioofy. Just enthusiast frontend devs want to learn anything."
+        content="🦄Auroraa is a template blog for everyone who wants to share their ideas, thoughts, or stories."
+      />
       <h1>Ioofy</h1>
     </Container>
   );
