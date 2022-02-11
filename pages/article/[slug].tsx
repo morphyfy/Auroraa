@@ -4,6 +4,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { Container } from "@styles/global.styles";
 import { DiscussionEmbed } from "disqus-react";
+import { useRouter } from "next/router";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -36,12 +37,16 @@ export default function Article({
     scope: { dateString, mainImageUrl, title, excerpt, longtimeRead, altImage },
   } = source;
 
+  const router = useRouter();
+  const { slug } = router.query;
+
   const Comments = () => {
     // your disquss shortname from https://disqus.com/admin/
     const disqusShortname = process.env.NEXT_PUBLIC_DISQUS_SHORTNAME;
 
     const disqusConfig = {
-      url: `${process.env.NEXT_API_PUBLIC_URL}/article/${title}`,
+      // your site that was deployed on server in here
+      url: `https://rizkyy27.vercel.app/article/${slug}`,
       identifier: title,
       title: title,
     };
