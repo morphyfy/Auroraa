@@ -7,6 +7,7 @@ const Home: NextPage = () => {
   return (
     <Container>
       <SEO title="Ioofy. Just enthusiast frontend devs want to learn anything." />
+      <h1>Ioofy</h1>
     </Container>
   );
 };

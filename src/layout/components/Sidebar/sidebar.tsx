@@ -3,20 +3,7 @@ import Link from "next/link";
 import React from "react";
 import * as BoxIcons from "react-icons/bi";
 import NextImage from "next/image";
-import Header from "../Header/header";
 import { data as sidebarData } from "./constant";
-
-const ContentMain = styled.div`
-  .nav-hidden {
-    display: none;
-  }
-
-  @media screen and (max-width: 912px) {
-    .nav-hidden {
-      display: block;
-    }
-  }
-`;
 
 const SidebarWrapper = styled.div`
   margin-top: -20px;
@@ -83,53 +70,50 @@ const Logo = styled(NextImage)`
 
 const Sidebar = () => {
   return (
-    <ContentMain>
-      <Header classes="nav-hidden" />
-      <SidebarWrapper>
-        <LogoWrapper>
-          <Logo
-            src="/image/logo.png"
-            height={70}
-            width={70}
-            alt="Logo"
-            layout="intrinsic"
-          />
-        </LogoWrapper>
-        <SidebarContainer>
-          <SidebarContent>
-            <SidebarMenu>
-              {sidebarData.map((item) => {
-                return (
-                  <Link href={item.href} key={item.id}>
-                    <a>
-                      <SidebarMenuItem>
-                        {item.icon === "home" ? (
-                          <BoxIcons.BiHome size={25} />
-                        ) : item.icon === "contact" ? (
-                          <BoxIcons.BiMailSend size={25} />
-                        ) : (
-                          <BoxIcons.BiCoffee size={25} />
-                        )}
-                      </SidebarMenuItem>
-                    </a>
-                  </Link>
-                );
-              })}
-              <div style={{ width: "25px", left: "30%", position: "relative" }}>
-                <hr />
-              </div>
-              <Link href="/chat">
-                <a>
-                  <SidebarMenuItem>
-                    <BoxIcons.BiCommentDots size={25} />
-                  </SidebarMenuItem>
-                </a>
-              </Link>
-            </SidebarMenu>
-          </SidebarContent>
-        </SidebarContainer>
-      </SidebarWrapper>
-    </ContentMain>
+    <SidebarWrapper>
+      <LogoWrapper>
+        <Logo
+          src="/image/logo.png"
+          height={70}
+          width={70}
+          alt="Logo"
+          layout="intrinsic"
+        />
+      </LogoWrapper>
+      <SidebarContainer>
+        <SidebarContent>
+          <SidebarMenu>
+            {sidebarData.map((item) => {
+              return (
+                <Link href={item.href} key={item.id}>
+                  <a>
+                    <SidebarMenuItem>
+                      {item.icon === "home" ? (
+                        <BoxIcons.BiHome size={25} />
+                      ) : item.icon === "contact" ? (
+                        <BoxIcons.BiMailSend size={25} />
+                      ) : (
+                        <BoxIcons.BiCoffee size={25} />
+                      )}
+                    </SidebarMenuItem>
+                  </a>
+                </Link>
+              );
+            })}
+            <div style={{ width: "25px", left: "30%", position: "relative" }}>
+              <hr />
+            </div>
+            <Link href="/chat">
+              <a>
+                <SidebarMenuItem>
+                  <BoxIcons.BiCommentDots size={25} />
+                </SidebarMenuItem>
+              </a>
+            </Link>
+          </SidebarMenu>
+        </SidebarContent>
+      </SidebarContainer>
+    </SidebarWrapper>
   );
 };
 

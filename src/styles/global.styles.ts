@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 
 export const globalStyles = css`
   @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap");
+
   @font-face {
     font-family: "FacebookReaderB";
     src: url("/font/FacebookReaderBold.otf") format("opentype");
@@ -37,7 +38,18 @@ export const Container = styled.div`
   margin: 0px auto;
   padding: 15px;
 
+  // only in slug page
+  .nav-hidden {
+    display: none;
+  }
+
   @media screen and (max-width: 991px) {
     padding: 0px;
+  }
+
+  @media screen and (max-width: 912px) {
+    .nav-hidden {
+      display: block;
+    }
   }
 `;

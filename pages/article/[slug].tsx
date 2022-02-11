@@ -15,6 +15,8 @@ import hljs from "highlight.js";
 import SEO from "@components/MetaData/SEO";
 import Sidebar from "@layout/components/Sidebar/sidebar";
 import "highlight.js/styles/stackoverflow-dark.css";
+import Footer from "@layout/components/Footer/footer";
+import Header from "@layout/components/Header/header";
 
 type Params = {
   [param: string]: any;
@@ -67,6 +69,7 @@ export default function Article({
 
   return (
     <Container>
+      <Header classes="nav-hidden" />
       <Sidebar />
       <SEO title={convertToTitle(title)} />
       <ArticleHeader
@@ -81,6 +84,7 @@ export default function Article({
         <MDXRemote {...source} />
         <Comments />
       </ArticleWrapper>
+      <Footer />
     </Container>
   );
 }

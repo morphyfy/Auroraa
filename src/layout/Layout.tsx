@@ -13,14 +13,14 @@ const Layout = (props: LayoutProps) => {
   const router = useRouter();
   const { children } = props;
 
-  const showHeader = router.pathname === "/article/[slug]" ? false : true;
+  const showLayout = router.pathname === "/article/[slug]" ? false : true;
 
   return (
     <React.Fragment>
       <Global styles={globalStyles} />
-      {showHeader && <Header />}
+      {showLayout && <Header />}
       <main className="wrapper __wrapper-contents">{children}</main>
-      <Footer />
+      {showLayout && <Footer />}
     </React.Fragment>
   );
 };
