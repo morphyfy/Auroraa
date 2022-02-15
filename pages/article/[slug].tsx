@@ -10,13 +10,13 @@ import path from "path";
 import matter from "gray-matter";
 import ArticleHeader from "@components/ArticleHeader";
 import ArticleWrapper from "@components/ArticleWrapper";
-import convertToTitle from "@utils/slugToTitle";
 import hljs from "highlight.js";
 import SEO from "@components/MetaData/SEO";
 import Sidebar from "@layout/components/Sidebar/sidebar";
 import "highlight.js/styles/stackoverflow-dark.css";
 import Footer from "@layout/components/Footer/footer";
 import Header from "@layout/components/Header/header";
+import { convertSlug } from "@utils/slugToText";
 
 type Params = {
   [param: string]: any;
@@ -71,7 +71,7 @@ export default function Article({
     <Container>
       <Header classes="nav-hidden" />
       <Sidebar />
-      <SEO title={convertToTitle(title)} content={slug} />
+      <SEO title={title as string} content={convertSlug(slug as string)} />
       <ArticleHeader
         altImage={altImage}
         longtimeRead={longtimeRead}
