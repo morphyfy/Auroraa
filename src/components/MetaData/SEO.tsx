@@ -1,39 +1,81 @@
 import React from "react";
-import Head from "next/head";
+import { useRouter } from "next/router";
+import { DefaultSeoProps, NextSeo } from "next-seo";
 
-type HelmetProps = {
+export type PageSeoProps = {
   title: string;
-  content: string | any;
+  titleTemplate?: string;
+  description?: string;
 };
 
-const SEO = (props: HelmetProps) => {
+export type BlogSeoProps = {
+  title: string;
+  description?: string;
+  date: string;
+  url: string;
+};
+
+const defaultMeta = {
+  title: "Opa Kholis Majid",
+  siteName: "opakholis.dev",
+  description: "Seorang antusias front end developer",
+  url: "https://opakholis.dev",
+  type: "website",
+};
+
+export const SEO: DefaultSeoProps = {
+  title: defaultMeta.title,
+  titleTemplate: `%s — ${defaultMeta.title}`,
+  description: defaultMeta.description,
+  openGraph: {
+    type: "website",
+    locale: "id_ID",
+    title: defaultMeta.title,
+    site_name: defaultMeta.siteName,
+    url: `defaultMeta.url`,
+  },
+  twitter: {
+    handle: "@opakholis",
+    site: "@opakholis",
+    cardType: "summary_large_image",
+  },
+};
+
+export function PageSeo({ title, titleTemplate, description }: PageSeoProps) {
+  const { asPath } = useRouter();
+  const url = `${defaultMeta.url}${asPath}`;
   return (
-    <Head>
-      <link rel="icon" href="/image/logo.png" />
-      <meta charSet="utf-8" />
-      <title>{props.title} | Auroraa 🦄</title>
-      <meta
-        name="description"
-        property="og:title"
-        content={props.content}
-        key="auroraa, blog, nextjs-blog, mdx-blog"
-      />
-      <meta
-        name="keywords"
-        content="auroraa, blog, nextjs-blog, mdx-blog"
-      ></meta>
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta
-        name="twitter:description"
-        content="Auroraa is a template blog for everyone who wants to share their ideas, thoughts, or stories."
-      />
-      <meta
-        name="twitter:title"
-        content="Auroraa 🦄 | A place to share any ideas, thoughts, or stories."
-      />
-      <meta name="twitter:card" content="summary_large_image" />
-    </Head>
+    <NextSeo
+      title={title}
+      titleTemplate={titleTemplate}
+      description={description}
+      canonical={url}
+      openGraph={{
+        title,
+        description: description,
+        url,
+      }}
+    />
   );
-};
+}
 
-export default SEO;
+export function BlogSeo({ title, description, date, url }: BlogSeoProps) {
+  const publishedAt = new Date(date).toISOString();
+
+  return (
+    <>
+      <NextSeo
+        title={title}
+        description={description}
+        canonical={url}
+        openGraph={{
+          type: "article",
+          article: { publishedTime: publishedAt },
+          url,
+          title,
+          description: description,
+        }}
+      />
+    </>
+  );
+}

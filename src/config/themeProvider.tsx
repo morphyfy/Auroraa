@@ -1,7 +1,7 @@
 /* eslint-disable react/display-name */
 import React, { useEffect, useState } from "react";
 import { css, Global, ThemeProvider, useTheme } from "@emotion/react";
-import { classicTheme, darkTheme } from "@styles/theme.styles";
+import { lightTheme, darkTheme } from "@styles/theme.styles";
 import useDarkMode from "use-dark-mode";
 
 type ThemeStylesProps = {
@@ -32,7 +32,7 @@ const ThemeStyles = () => {
 
 const ThemeProviders = ({ children }: { children: React.ReactNode }) => {
   const { value } = useDarkMode(false, { storageKey: null, onChange: null });
-  const theme = value ? darkTheme : classicTheme;
+  const theme = value ? darkTheme : lightTheme;
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {

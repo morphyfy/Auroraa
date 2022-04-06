@@ -1,4 +1,4 @@
 export const maxWidth = {
-  large: "1050px",
+  large: "950px",
   medium: "700px",
 };
