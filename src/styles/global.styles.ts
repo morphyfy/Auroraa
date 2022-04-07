@@ -7,8 +7,8 @@ export const globalStyles = css`
   @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,400;1,500&display=swap");
 
   @font-face {
-    font-family: "Guillon";
-    src: url("/fonts/Guillon.woff2") format("woff2");
+    font-family: "Grotesk";
+    src: url("/fonts/Grotesk.woff2") format("woff2");
   }
 
   @font-face {
@@ -24,13 +24,11 @@ export const globalStyles = css`
 export const Container = styled.div`
   z-index: 1;
   width: 100%;
-  font-family: "IBMSans", sans-serif;
-  max-width: ${maxWidth.large};
+  max-width: ${maxWidth.medium};
   margin: 0px auto;
-  padding: 15px;
 
   // every markup have a margin
-  h2,
+  /* h2,
   h3,
   a,
   p,
@@ -106,5 +104,5 @@ export const Container = styled.div`
         font-size: 1.5rem !important;
       }
     }
-  }
+  } */
 `;

@@ -1,27 +1,24 @@
 import React, { ReactNode } from "react";
-import { Global } from "@emotion/react";
-import Footer from "./components/Footer/footer";
-import Header from "./components/Header/header";
-import { globalStyles } from "@styles/global.styles";
-import { useRouter } from "next/router";
+import styled from "@emotion/styled";
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
 
 interface LayoutProps {
   children: ReactNode;
 }
 
-const Layout = (props: LayoutProps) => {
-  const router = useRouter();
-  const { children } = props;
+const Main = styled.main`
+  margin: 20px 0px;
+`;
 
-  // replace data from default layout to custom
-  const showLayout = router.pathname === "/article/[slug]" ? false : true;
+const Layout = (props: LayoutProps) => {
+  const { children } = props;
 
   return (
     <React.Fragment>
-      <Global styles={globalStyles} />
-      {showLayout && <Header />}
-      <main className="wrapper __wrapper-contents">{children}</main>
-      {showLayout && <Footer />}
+      <Header />
+      <Main>{children}</Main>
+      <Footer />
     </React.Fragment>
   );
 };

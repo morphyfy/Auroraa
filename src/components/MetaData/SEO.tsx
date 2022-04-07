@@ -1,6 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import { DefaultSeoProps, NextSeo } from "next-seo";
+import moment from "moment";
 
 export type PageSeoProps = {
   title: string;
@@ -62,6 +63,8 @@ export function PageSeo({ title, titleTemplate, description }: PageSeoProps) {
 export function BlogSeo({ title, description, date, url }: BlogSeoProps) {
   const publishedAt = new Date(date).toISOString();
 
+  const intoMoment = moment(publishedAt).format("DD MMMM YYYY");
+
   return (
     <>
       <NextSeo
@@ -70,7 +73,7 @@ export function BlogSeo({ title, description, date, url }: BlogSeoProps) {
         canonical={url}
         openGraph={{
           type: "article",
-          article: { publishedTime: publishedAt },
+          article: { publishedTime: intoMoment },
           url,
           title,
           description: description,
