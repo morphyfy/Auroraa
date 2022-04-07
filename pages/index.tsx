@@ -1,40 +1,30 @@
-import React, { useEffect } from "react";
+import React from "react";
 import client from "@lib/apollo";
-import Markdown from "markdown-to-jsx";
+import BlogFeature from "@components/BlogFeature/BlogCard/BlogCard";
 import { Container } from "@styles/global.styles";
-import { gql } from "@apollo/client";
 import { PostProps } from "@interface/@types";
 import { PageSeo } from "@components/MetaData/SEO";
-import hljs from "highlight.js";
-import "highlight.js/styles/github-dark.css";
-import Thumbnail from "@components/Thumbnail/Image";
+import { QUERY_POSTS } from "@graphql/graphql.query";
 
 const Home = ({ postsConnection }: PostProps) => {
-  console.log(postsConnection);
-
-  useEffect(() => {
-    hljs.highlightAll();
-  }, []);
-
   return (
     <Container>
       <PageSeo
-        title="hello world"
-        description="awesome"
-        key="blog, mdx, and others stuff"
+        title="Rizkyy😎"
+        description="I'm Rizky front-end developer. proficient with JS and CSS Framework"
+        key="rizkyy blog, blog, mdx, next.js blog, nextjs blog, graphcms, cms"
       />
       {postsConnection &&
-        postsConnection.edges.map((edge, index) => {
+        postsConnection.edges.map((edge) => {
           return (
-            <div key={index}>
-              <h1>{edge.node.title}</h1>
-              <p>{edge.node.excerpt}</p>
-              <Thumbnail
-                srcUrl={edge.node.thumbnailImage.url}
-                altText={edge.node.thumbnailImage.fileName}
-              />
-              <Markdown>{edge.node.content}</Markdown>
-            </div>
+            <BlogFeature
+              slug={edge.node.slug}
+              key={edge.node.id}
+              categories={edge.node.categories}
+              excerpt={edge.node.excerpt}
+              title={edge.node.title}
+              date={edge.node.createdAt}
+            />
           );
         })}
     </Container>
@@ -43,28 +33,10 @@ const Home = ({ postsConnection }: PostProps) => {
 
 export async function getServerSideProps() {
   const { data } = await client.query({
-    query: gql`
-      query MyQuery {
-        postsConnection(first: 1) {
-          edges {
-            node {
-              excerpt
-              title
-              thumbnailImage {
-                url
-                fileName
-              }
-              content
-            }
-            cursor
-          }
-          pageInfo {
-            endCursor
-            hasNextPage
-          }
-        }
-      }
-    `,
+    query: QUERY_POSTS,
+    variables: {
+      first: 10,
+    },
   });
 
   const { postsConnection } = data;

@@ -1,11 +1,86 @@
 import React from "react";
+import styled from "@emotion/styled";
+import Link from "next/link";
+import Image from "next/image";
+import { maxWidth } from "@styles/variable.styles";
+import { linkHref } from "./constant/constant";
 
-type HeaderProps = {
-  classes?: string;
-};
+const Nav = styled.nav`
+  height: 80px;
+  margin: 25px 0px;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+`;
 
-const Header = (props: HeaderProps) => {
-  return <div className={props.classes}>Header</div>;
+const NavbarContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  z-index: 1;
+  width: 100%;
+  padding: 0 0 15px;
+  max-width: ${maxWidth.medium};
+
+  @media screen and (max-width: 600px) {
+    padding: 15px;
+    height: 80px;
+  }
+`;
+
+const SideItem = styled.div`
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+`;
+
+const NavLinks = styled.ul`
+  font-family: "IBMSans", sans-serif;
+  font-size: 19px;
+  padding-left: 40px;
+`;
+
+const NavItem = styled.li`
+  color: white;
+  cursor: pointer;
+  list-style: none;
+`;
+
+const Header = () => {
+  return (
+    <Nav>
+      <NavbarContainer>
+        <Link href="/">
+          <a>
+            <Image
+              src="/static/logo.png"
+              alt="logo"
+              height={55}
+              width={50}
+              quality={100}
+              objectFit="contain"
+            />
+          </a>
+        </Link>
+        <SideItem>
+          {linkHref.map((item) => (
+            <Link href={item.href} key={item.id}>
+              <NavLinks>
+                <NavItem>{item.name}</NavItem>
+              </NavLinks>
+            </Link>
+          ))}
+        </SideItem>
+      </NavbarContainer>
+    </Nav>
+  );
 };
 
 export default Header;

@@ -37,7 +37,8 @@
       "@interface/*": ["src/interface/*"],
       "@data/*": ["src/data/*"],
       "@config/*": ["src/config/*"],
-      "@lib/*": ["src/lib/*"]
+      "@lib/*": ["src/lib/*"],
+      "@graphql/*": ["src/graphql/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
