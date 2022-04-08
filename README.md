@@ -16,7 +16,6 @@ Auroraa is a a blog template for everyone who want share ideas, thoughts, or sto
    yarn
    ```
 
-
 ## 🚀 Building and Running for previews
 
 1. Generate a full static production build
@@ -24,8 +23,9 @@ Auroraa is a a blog template for everyone who want share ideas, thoughts, or sto
    ```sh
    yarn build
    ```
+
 2. Generate for development preview
- 
+
    ```sh
    yarn dev
    ```

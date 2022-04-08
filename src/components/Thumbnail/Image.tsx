@@ -12,12 +12,13 @@ const ImageFigure = styled.figure``;
 
 const FigCaptions = styled.figcaption`
   margin: 10px auto;
-  font-family: "FacebookReaderM", sans-serif;
-  font-size: 15px;
+  font-family: "IBMSans", sans-serif;
+  font-size: 14px;
   opacity: 0.8;
   width: ${maxWidth.medium};
   text-align: center;
   max-width: 100%;
+
   @media screen and (max-width: 834px) {
     width: 100%;
   }
@@ -26,16 +27,22 @@ const FigCaptions = styled.figcaption`
   }
 `;
 
+const ThumbnailImage = styled(Image)`
+  object-fit: cover !important;
+`;
+
 const Thumbnail: React.FC<ThumbnailProps> = ({ altText, srcUrl }) => {
   return (
     <ImageFigure>
-      <Image
+      <ThumbnailImage
         src={srcUrl}
         alt={altText}
         width={950}
         height={500}
-        objectFit="cover"
         quality={100}
+        priority
+        placeholder="blur"
+        blurDataURL={`/_next/image?url=${srcUrl}&w=16&q=1`}
       />
       <FigCaptions>{altText}</FigCaptions>
     </ImageFigure>

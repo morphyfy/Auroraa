@@ -7,7 +7,7 @@ const CardWrapper = styled.div`
   width: 100%;
   margin: 50px 0px;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 653px) {
     padding: 15px;
   }
 `;
@@ -16,6 +16,10 @@ const CardTop = styled.div`
   display: flex;
   font-size: 16px;
   font-family: "IBMSans", sans-serif;
+
+  @media screen and (max-width: 280px) {
+    flex-direction: column;
+  }
 `;
 
 const CardContent = styled.div`
@@ -24,11 +28,16 @@ const CardContent = styled.div`
 
 const CardDate = styled.p`
   opacity: 0.7;
+  font-size: 17px;
 `;
 
 const CardCategories = styled.span`
   margin-left: 5px;
   color: #35f4c6;
+
+  @media screen and (max-width: 280px) {
+    margin: 0px;
+  }
 `;
 
 const CardTitle = styled.h3`
@@ -37,7 +46,7 @@ const CardTitle = styled.h3`
   text-transform: capitalize;
   margin: 15px 0px;
   font-family: "Grotesk", sans-serif;
-  font-size: 30px;
+  font-size: 24px;
 
   &:hover {
     text-decoration: underline;
@@ -49,7 +58,7 @@ const CardTitle = styled.h3`
 `;
 
 const CardExcerpt = styled.p`
-  font-size: 18px;
+  font-size: 17px;
   font-family: "IBMSans", sans-serif;
   opacity: 0.7;
 `;
@@ -70,7 +79,7 @@ const BlogFeature: React.FC<BlogFeatureProps> = (props) => {
       <CardTop>
         <CardDate>{parseDate(props.date)}</CardDate>
         {props.categories.map((cat, index) => (
-          <CardCategories key={index}> — {cat.name}</CardCategories>
+          <CardCategories key={index}> #{cat.name}</CardCategories>
         ))}
       </CardTop>
       <CardContent>

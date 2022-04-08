@@ -12,6 +12,6 @@ export const linkHref = [
   {
     id: 3,
     href: "/contact",
-    name: "Contact",
+    name: "Kontak",
   },
 ];
