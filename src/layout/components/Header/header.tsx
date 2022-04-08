@@ -6,8 +6,8 @@ import { maxWidth } from "@styles/variable.styles";
 import { linkHref } from "./constant/constant";
 
 const Nav = styled.nav`
-  height: 80px;
-  margin: 25px 0px;
+  height: 90px;
+  margin: 10px 0px;
   background: transparent;
   display: flex;
   justify-content: center;
@@ -20,13 +20,13 @@ const Nav = styled.nav`
 const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  height: 60px;
+  height: 65px;
   z-index: 1;
   width: 100%;
   padding: 0 0 15px;
   max-width: ${maxWidth.medium};
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 653px) {
     padding: 15px;
     height: 80px;
   }
@@ -36,7 +36,7 @@ const SideItem = styled.div`
   display: flex;
   align-items: center;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 653px) {
     display: none;
   }
 `;

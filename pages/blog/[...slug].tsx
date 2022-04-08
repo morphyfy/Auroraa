@@ -1,47 +1,18 @@
 import React from "react";
 import client from "@lib/apollo";
+import BlogHeader from "@components/BlogFeature/BlogHeader/BlogHeader";
+import BlogComments from "@components/BlogFeature/BlogComments/BlogComments";
+import BlogWrapper from "@components/BlogFeature/BlogWrapper/BlogWrapper";
 import { Container } from "@styles/global.styles";
-import { DiscussionEmbed } from "disqus-react";
 import { QUERY_POSTS, QUERY_POSTS_DETAIL } from "@graphql/graphql.query";
 import { PostDetailProps, PostProps } from "@interface/@types";
 import { BlogSeo } from "@components/MetaData/SEO";
-import BlogHeader from "@components/BlogFeature/BlogHeader/BlogHeader";
-
-type DisqusConfig = {
-  url: string;
-  identifier: string | any;
-  title: string | any;
-};
 
 export default function Article({ post }: PostDetailProps) {
-  // assign to constant
-  const postDetail = post;
-
-  const Comments = () => {
-    // your disquss shortname from https://disqus.com/admin/
-    const disqusShortname = process.env.NEXT_PUBLIC_DISQUS_SHORTNAME;
-
-    const disqusConfig = {
-      // your site that was deployed on server in here
-      url: `https://rizkyy27.vercel.app/article/${postDetail.slug}`,
-      identifier: postDetail.title,
-      title: postDetail.title,
-    };
-
-    return (
-      <>
-        <DiscussionEmbed
-          shortname={disqusShortname}
-          config={disqusConfig as DisqusConfig}
-        />
-      </>
-    );
-  };
-
   return (
     <Container>
       <BlogSeo
-        title={`${post.title} | Developer Blog - Rizkyy😎`}
+        title={`${post.title} | Blog Tulisan — Rizkyy😎`}
         url={`https://rizkyy27.vercel.app/article/${post.slug}`}
         description={post.excerpt}
         date={post.createdAt}
@@ -54,9 +25,10 @@ export default function Article({ post }: PostDetailProps) {
         altThumbnail={post.thumbnailImage.fileName}
         thumbnailUrl={post.thumbnailImage.url}
         title={post.title}
-        longtimeRead={5}
+        longTimeRead={post.content}
       />
-      <Comments />
+      <BlogWrapper content={post.content} />
+      <BlogComments slug={post.slug} title={post.title} />
     </Container>
   );
 }
@@ -87,6 +59,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: ParamsProps) {
+  // get slug from params
   const slug = params.slug[0];
 
   const { data } = await client.query({
@@ -96,7 +69,7 @@ export async function getStaticProps({ params }: ParamsProps) {
     },
   });
 
-  const { post } = data as PostDetailProps;
+  const { post } = data;
 
   return {
     props: {

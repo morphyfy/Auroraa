@@ -1,27 +1,30 @@
 import styled from "@emotion/styled";
-import { maxWidth } from "@styles/variable.styles";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Thumbnail from "@components/Thumbnail/Image";
 import { parseDate } from "@utils/parseDate";
+import { readTime } from "@utils/readTime";
+import { maxWidth } from "@styles/variable.styles";
 
 const HeaderArticleWrapper = styled.div`
   width: ${maxWidth.medium};
   max-width: 100%;
   margin: auto;
+
   @media screen and (max-width: 834px) {
     width: 100%;
-    padding: 15px;
+    padding: 0 15px;
   }
 `;
 
 const Heading = styled.h1`
-  font-size: 2.1rem;
+  font-size: 1.8rem;
   font-family: "Grotesk", sans-serif;
   margin: 20px 0px 20px;
+
   @media screen and (max-width: 280px) {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 `;
 
@@ -31,6 +34,10 @@ const Excerpt = styled.h2`
   line-height: 1.3;
   font-family: "IBMSans", sans-serif;
   margin: 0px 0px 40px;
+
+  @media screen and (max-width: 280px) {
+    font-size: 1rem;
+  }
 `;
 
 const AuthorDataContainer = styled.div`
@@ -70,7 +77,7 @@ const DateTitle = styled.p`
 
 type GrayMaterProps = {
   dateString: string;
-  longtimeRead: number;
+  longTimeRead: string;
   title: string;
   excerpt: string;
   authorUrl: string;
@@ -96,7 +103,8 @@ const BlogHeader: React.FC<GrayMaterProps> = (props) => {
             </a>
           </Link>
           <DateTitle>
-            {parseDate(props.dateString)} • 👁️ {props.longtimeRead} min read
+            {parseDate(props.dateString)} • 👁️ {readTime(props.longTimeRead)}{" "}
+            min read
           </DateTitle>
         </AsideRight>
       </AuthorDataContainer>
