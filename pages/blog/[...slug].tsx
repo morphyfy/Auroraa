@@ -12,7 +12,7 @@ export default function Article({ post }: PostDetailProps) {
   return (
     <Container>
       <BlogSeo
-        title={`${post.title} | Blog Tulisan — Rizkyy😎`}
+        title={`${post.title} — Blog Tulisan`}
         url={`https://rizkyy27.vercel.app/article/${post.slug}`}
         description={post.excerpt}
         date={post.createdAt}

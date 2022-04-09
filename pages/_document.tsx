@@ -6,7 +6,7 @@ export default function Document() {
     <Html lang="id">
       <Head>
         <link href="/favicon.ico" rel="shortcut icon" />
-        <link href="/manifest.json" rel="manifest" />
+        <link href="/site.webmanifest" rel="manifest" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"

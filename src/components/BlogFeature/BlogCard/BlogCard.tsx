@@ -10,6 +10,10 @@ const CardWrapper = styled.div`
   @media screen and (max-width: 653px) {
     padding: 15px;
   }
+
+  @media screen and (max-width: 428px) {
+    margin: 20px 0px;
+  }
 `;
 
 const CardTop = styled.div`
@@ -34,6 +38,7 @@ const CardDate = styled.p`
 const CardCategories = styled.span`
   margin-left: 5px;
   color: #35f4c6;
+  cursor: pointer;
 
   @media screen and (max-width: 280px) {
     margin: 0px;
@@ -70,6 +75,7 @@ type BlogFeatureProps = {
   excerpt: string;
   categories: {
     name: string;
+    slug: string;
   }[];
 };
 
@@ -79,7 +85,9 @@ const BlogFeature: React.FC<BlogFeatureProps> = (props) => {
       <CardTop>
         <CardDate>{parseDate(props.date)}</CardDate>
         {props.categories.map((cat, index) => (
-          <CardCategories key={index}> #{cat.name}</CardCategories>
+          <Link key={index} href={`/blog?query=${cat.slug}`}>
+            <CardCategories> #{cat.name}</CardCategories>
+          </Link>
         ))}
       </CardTop>
       <CardContent>

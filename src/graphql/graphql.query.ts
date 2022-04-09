@@ -12,6 +12,7 @@ export const QUERY_POSTS = gql`
           createdAt
           categories {
             name
+            slug
           }
         }
         cursor
@@ -45,6 +46,7 @@ export const QUERY_POSTS_DETAIL = gql`
       }
       categories {
         name
+        slug
       }
     }
   }

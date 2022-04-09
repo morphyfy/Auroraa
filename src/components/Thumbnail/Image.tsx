@@ -38,7 +38,7 @@ const Thumbnail: React.FC<ThumbnailProps> = ({ altText, srcUrl }) => {
         src={srcUrl}
         alt={altText}
         width={950}
-        height={500}
+        height={550}
         quality={100}
         priority
         placeholder="blur"

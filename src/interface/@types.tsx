@@ -9,6 +9,7 @@ export interface PostProps {
         createdAt: string;
         categories: {
           name: string;
+          slug: string;
         }[];
       };
     }[];
@@ -34,6 +35,7 @@ export interface PostDetailProps {
     };
     categories: {
       name: string;
+      slug: string;
     }[];
     content: string;
     createdAt: string;
