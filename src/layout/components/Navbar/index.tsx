@@ -53,7 +53,7 @@ const NavItem = styled.li`
   list-style: none;
 `;
 
-const Headers = () => {
+const Navbar = () => {
   return (
     <Nav>
       <NavbarContainer>
@@ -83,4 +83,4 @@ const Headers = () => {
   );
 };
 
-export default Headers;
+export default Navbar;

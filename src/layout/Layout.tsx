@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import styled from "@emotion/styled";
-import Footers from "./components/Footer/Footer";
-import Headers from "./components/Header/Header";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 interface LayoutProps {
   children: ReactNode;
@@ -16,9 +16,9 @@ const Layout = (props: LayoutProps) => {
 
   return (
     <React.Fragment>
-      <Headers />
+      <Navbar />
       <Main>{children}</Main>
-      <Footers />
+      <Footer />
     </React.Fragment>
   );
 };
