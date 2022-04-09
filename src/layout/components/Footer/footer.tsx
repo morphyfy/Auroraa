@@ -45,7 +45,7 @@ const WebInfo = styled.p`
   font-size: 16px;
 `;
 
-const Footer = () => {
+const Footers = () => {
   return (
     <FooterMain>
       <FooterWrapper>
@@ -58,4 +58,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Footers;
