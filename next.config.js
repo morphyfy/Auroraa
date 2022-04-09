@@ -15,5 +15,6 @@ module.exports = withPWA({
     register: true,
     skipWaiting: true,
     runtimeCaching,
+    buildExcludes: [/site.webmanifest$/],
   },
 });
