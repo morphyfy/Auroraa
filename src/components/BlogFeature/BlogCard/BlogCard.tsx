@@ -40,7 +40,7 @@ const CardCategories = styled.span`
   }
 `;
 
-const CardTitle = styled.h3`
+const CardTitle = styled.h1`
   font-weight: bold;
   cursor: pointer;
   text-transform: capitalize;
