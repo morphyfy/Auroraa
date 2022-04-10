@@ -7,6 +7,7 @@ import { PostProps } from "@interface/@types";
 import { PageSeo } from "@components/MetaData/SEO";
 import { QUERY_POSTS } from "@graphql/graphql.query";
 import { MdOutlineArticle } from "react-icons/md";
+import Profile from "@components/Thumbnail/Profile";
 
 const Home = ({ postsConnection }: PostProps) => {
   return (
@@ -16,6 +17,12 @@ const Home = ({ postsConnection }: PostProps) => {
         description="I'm Rizky front-end developer. proficient with JS and CSS Framework"
         key="rizkyy blog, blog, mdx, next.js blog, nextjs blog, graphcms, cms"
       />
+
+      <Profile
+        srcUrl="https://media.graphassets.com/LWpfWkPERf5rs6SjZXju"
+        altText="author"
+      />
+
       <div className="flex flex-col items-start space-y-3 sm:p-4">
         <div className="flex items-center">
           <div className="rounded-[12px] bg-sky-400/30 p-[5px] dark:bg-zinc-700/80">
@@ -24,6 +31,7 @@ const Home = ({ postsConnection }: PostProps) => {
           <h1 className="text-[25px] font-[IBMSans] ml-2">Tulisan terbaru</h1>
         </div>
       </div>
+
       {postsConnection &&
         postsConnection.edges.map((edge) => {
           return (
