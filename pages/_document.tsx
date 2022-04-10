@@ -36,7 +36,7 @@ export default function Document() {
       data-website-id="1656c6d6-c8e0-4352-bb7a-ef1538170dc3"
       src="https://umami-production-e27e.up.railway.app/umami.js"
     ></script>
-  );
+  )
 }
       <NextScript />
       </body>
