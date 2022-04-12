@@ -21,6 +21,10 @@ const CardTop = styled.div`
   font-size: 16px;
   font-family: "IBMSans", sans-serif;
 
+  @media screen and (max-width: 428px) {
+    font-size: 15px;
+  }
+
   @media screen and (max-width: 280px) {
     flex-direction: column;
   }
@@ -33,6 +37,10 @@ const CardContent = styled.div`
 const CardDate = styled.p`
   opacity: 0.7;
   font-size: 17px;
+
+  @media screen and (max-width: 428px) {
+    font-size: 16px;
+  }
 `;
 
 const CardCategories = styled.span`
@@ -66,6 +74,10 @@ const CardExcerpt = styled.p`
   font-size: 17px;
   font-family: "IBMSans", sans-serif;
   opacity: 0.7;
+
+  @media screen and (max-width: 428px) {
+    font-size: 16px;
+  }
 `;
 
 type BlogFeatureProps = {

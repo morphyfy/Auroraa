@@ -31,12 +31,12 @@ const Heading = styled.h1`
 const Excerpt = styled.h2`
   font-size: 1.1rem;
   opacity: 0.8;
-  line-height: 1.3;
+  line-height: 1.5;
   font-family: "IBMSans", sans-serif;
   margin: 0px 0px 40px;
 
-  @media screen and (max-width: 280px) {
-    font-size: 1rem;
+  @media screen and (max-width: 428px) {
+    font-size: 16px;
   }
 `;
 

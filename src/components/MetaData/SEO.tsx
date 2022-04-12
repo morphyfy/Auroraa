@@ -1,6 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { DefaultSeoProps, NextSeo } from "next-seo";
+import { NextSeo } from "next-seo";
 import moment from "moment";
 
 export type PageSeoProps = {
@@ -17,29 +17,12 @@ export type BlogSeoProps = {
 };
 
 const defaultMeta = {
-  title: "Opa Kholis Majid",
-  siteName: "opakholis.dev",
-  description: "Seorang antusias front end developer",
-  url: "https://opakholis.dev",
+  title: "Muhamad Rizky",
+  siteName: "rizkyy.space",
+  description:
+    "Seorang antusias frontend developer, memiliki passion dibidang web.",
+  url: "https://rizkyy.space",
   type: "website",
-};
-
-export const SEO: DefaultSeoProps = {
-  title: defaultMeta.title,
-  titleTemplate: `%s — ${defaultMeta.title}`,
-  description: defaultMeta.description,
-  openGraph: {
-    type: "website",
-    locale: "id_ID",
-    title: defaultMeta.title,
-    site_name: defaultMeta.siteName,
-    url: `defaultMeta.url`,
-  },
-  twitter: {
-    handle: "@opakholis",
-    site: "@opakholis",
-    cardType: "summary_large_image",
-  },
 };
 
 export function PageSeo({ title, titleTemplate, description }: PageSeoProps) {

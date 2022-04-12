@@ -8,7 +8,9 @@ type ThumbnailProps = {
   altText: string;
 };
 
-const ImageFigure = styled.figure``;
+const ImageFigure = styled.figure`
+  max-width: 100%;
+`;
 
 const FigCaptions = styled.figcaption`
   margin: 10px auto;
@@ -17,7 +19,6 @@ const FigCaptions = styled.figcaption`
   opacity: 0.8;
   width: ${maxWidth.medium};
   text-align: center;
-  max-width: 100%;
 
   @media screen and (max-width: 834px) {
     width: 100%;

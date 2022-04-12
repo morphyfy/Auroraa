@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import styled from "@emotion/styled";
 import { maxWidth } from "@styles/variable.styles";
-import Markdown from "markdown-to-jsx";
 import hljs from "highlight.js";
 import "highlight.js/styles/github-dark.css";
+import Markdown from "markdown-to-jsx";
 
 type WrapperArticleProps = {
   content: string;
@@ -36,12 +36,12 @@ const WrapperArticle = styled.div`
   }
   p {
     code {
-      padding: 4px;
+      padding: 5px;
       background: #373c49;
       color: #fff;
       border-radius: 2px;
       font-family: "IBMSans", sans-serif;
-      font-size: 13px;
+      font-size: 14px;
       margin: 0 2px;
     }
   }
@@ -56,7 +56,7 @@ const WrapperArticle = styled.div`
   pre {
     code {
       font-family: "IBM Plex Mono", monospace;
-      font-size: 15px;
+      font-size: 14px;
       border-radius: 2px;
       .hljs-tag,
       .hljs-function,
@@ -106,6 +106,10 @@ const WrapperArticle = styled.div`
     font-family: "IBMSans", sans-serif;
     font-size: 18px;
     line-height: 1.7em;
+
+    @media screen and (max-width: 428px) {
+      font-size: 16px;
+    }
   }
   img {
     border-radius: 5px !important;
@@ -135,9 +139,6 @@ const WrapperArticle = styled.div`
     h3 {
       font-size: 1.2rem;
     }
-    p {
-      font-size: 15px;
-    }
     em {
       font-size: 13px;
     }
@@ -153,6 +154,7 @@ const BlogWrapper: React.FC<WrapperArticleProps> = ({ content }) => {
   useEffect(() => {
     hljs.highlightAll();
   }, []);
+
   return (
     <WrapperArticle>
       <Markdown>{content}</Markdown>
