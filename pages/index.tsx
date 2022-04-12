@@ -80,16 +80,15 @@ const Home = ({ postsConnection }: PostProps) => {
               date={node.createdAt}
             />
           ))}
-      </div>
-
-      <Link href="/blog">
-        <span
-          className="block my-5 font-[IBMSans] text-[18px] font-bold cursor-pointer
+        <Link href="/blog">
+          <span
+            className="block my-5 font-[IBMSans] text-[18px] font-bold cursor-pointer
         text-[#35f4c6] sm:p-4"
-        >
-          Lihat Semua →
-        </span>
-      </Link>
+          >
+            Lihat Semua →
+          </span>
+        </Link>
+      </div>
     </Container>
   );
 };
