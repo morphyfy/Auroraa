@@ -36,17 +36,18 @@ const CardContent = styled.div`
 
 const CardDate = styled.p`
   opacity: 0.7;
-  font-size: 17px;
+  font-size: 16px;
 
   @media screen and (max-width: 428px) {
-    font-size: 16px;
+    font-size: 15px;
   }
 `;
 
 const CardCategories = styled.span`
   margin-left: 5px;
-  color: #35f4c6;
+  color: #1bd6ca;
   cursor: pointer;
+  font-weight: bold;
 
   @media screen and (max-width: 280px) {
     margin: 0px;
@@ -91,7 +92,7 @@ type BlogFeatureProps = {
   }[];
 };
 
-const BlogFeature: React.FC<BlogFeatureProps> = (props) => {
+const BlogCard: React.FC<BlogFeatureProps> = (props) => {
   return (
     <CardWrapper>
       <CardTop>
@@ -112,4 +113,4 @@ const BlogFeature: React.FC<BlogFeatureProps> = (props) => {
   );
 };
 
-export default BlogFeature;
+export default BlogCard;

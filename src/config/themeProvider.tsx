@@ -2,12 +2,8 @@
 import React, { useEffect, useState } from "react";
 import { css, Global, ThemeProvider, useTheme } from "@emotion/react";
 import { lightTheme, darkTheme } from "@styles/theme.styles";
+import { ThemeStylesProps } from "@interface/@types";
 import useDarkMode from "use-dark-mode";
-
-type ThemeStylesProps = {
-  body: string;
-  text: string;
-};
 
 const ThemeStyles = () => {
   const theme = useTheme() as ThemeStylesProps;

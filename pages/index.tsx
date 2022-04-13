@@ -3,14 +3,13 @@ import client from "@lib/apollo";
 import Link from "next/link";
 import cn from "classnames";
 import Profile from "@components/Thumbnail/Profile";
-import BlogFeature from "@components/BlogFeature/BlogCard/BlogCard";
+import BlogCard from "@components/BlogFeature/BlogCard/BlogCard";
 import { Container } from "@styles/global.styles";
 import { PostProps } from "@interface/@types";
 import { PageSeo } from "@components/MetaData/SEO";
 import { QUERY_POSTS } from "@graphql/graphql.query";
 import { Contact } from "@components/Contacts/ContactsBadge";
-import { AiFillFacebook } from "react-icons/ai";
-import { FiGithub, FiAtSign } from "react-icons/fi";
+import { FiGithub, FiAtSign, FiFacebook } from "react-icons/fi";
 import { MdOutlineArticle } from "react-icons/md";
 
 const Home = ({ postsConnection }: PostProps) => {
@@ -30,9 +29,12 @@ const Home = ({ postsConnection }: PostProps) => {
       <div className="max-w-[600px] border-lime-200 my-10 leading-7 sm:p-4 sm:my-4">
         <p className="text-[18px] font-[IBMSans] sm:text-[17px] xsm:text-[16px]">
           👋 Halo... Salam kenal, saya adalah seorang antusias{" "}
-          <span className="text-[#17F2E5]">frontend developer</span> dan seorang{" "}
-          <span className="text-[#E879F9]">self-taught programmer</span> dari
-          Bogor, Indonesia. Dan saya sangat sering menggunakan JS dan CSS
+          <span className="text-[#1BD6CA] font-bold">frontend developer</span>{" "}
+          dan seorang{" "}
+          <span className="text-[#E879F9] font-bold">
+            self-taught programmer
+          </span>{" "}
+          dari Bogor, Indonesia. Dan saya sangat sering menggunakan JS dan CSS
           Framework. Disamping itu saya juga sering menggunakan figma sebagai
           tools prototype.
         </p>
@@ -42,7 +44,7 @@ const Home = ({ postsConnection }: PostProps) => {
             href="https://www.facebook.com/rizukyy27/"
             title="Facebook"
             className={cn(`bg-sky-500`)}
-            icon={<AiFillFacebook size={19} />}
+            icon={<FiFacebook size={19} />}
           />
           <Contact
             href="https://github.com/ioofy"
@@ -71,7 +73,7 @@ const Home = ({ postsConnection }: PostProps) => {
       <div className="card-post">
         {postsConnection &&
           postsConnection.edges.map(({ node }) => (
-            <BlogFeature
+            <BlogCard
               slug={node.slug}
               key={node.id}
               categories={node.categories}
@@ -83,7 +85,7 @@ const Home = ({ postsConnection }: PostProps) => {
         <Link href="/blog">
           <span
             className="block my-5 font-[IBMSans] text-[18px] font-bold cursor-pointer
-        text-[#35f4c6] sm:p-4"
+            text-[#1bd6ca] sm:p-4"
           >
             Lihat Semua →
           </span>

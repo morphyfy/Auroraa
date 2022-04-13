@@ -44,3 +44,9 @@ export interface PostDetailProps {
     excerpt: string;
   };
 }
+
+export type ThemeStylesProps = {
+  body: string;
+  text: string;
+  navBg: string;
+};

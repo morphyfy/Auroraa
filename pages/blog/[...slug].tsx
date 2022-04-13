@@ -18,14 +18,14 @@ export default function Article({ post }: PostDetailProps) {
         date={post.createdAt}
       />
       <BlogHeader
+        title={post.title}
+        excerpt={post.excerpt}
+        dateString={post.createdAt}
         authorName={post.author.name}
         authorUrl={post.author.photo.url}
-        dateString={post.createdAt}
-        excerpt={post.excerpt}
-        altThumbnail={post.thumbnailImage.fileName}
+        longTimeReadContent={post.content}
         thumbnailUrl={post.thumbnailImage.url}
-        title={post.title}
-        longTimeRead={post.content}
+        altThumbnail={post.thumbnailImage.fileName}
       />
       <BlogWrapper content={post.content} />
       <BlogComments slug={post.slug} title={post.title} />
