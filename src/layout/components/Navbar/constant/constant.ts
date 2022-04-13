@@ -1,4 +1,4 @@
-export const linkHref = [
+export const menuItem = [
   {
     id: 1,
     href: "/blog",

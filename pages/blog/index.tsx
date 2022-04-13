@@ -1,6 +1,6 @@
 import client from "@lib/apollo";
 import React from "react";
-import BlogFeature from "@components/BlogFeature/BlogCard/BlogCard";
+import BlogCard from "@components/BlogFeature/BlogCard/BlogCard";
 import { TiPen } from "react-icons/ti";
 import { QUERY_POSTS } from "@graphql/graphql.query";
 import { PostProps } from "@interface/@types";
@@ -11,7 +11,7 @@ const Blog = ({ postsConnection }: PostProps) => {
   return (
     <Container>
       <PageSeo
-        title="— Blog Tulisan"
+        title="— Blog Tulisan✍️"
         description="Seorang antusias frontend developer, memiliki passion dibidang web."
         key="rizkyy.space, rizkyy, rizkyy blog, blog, mdx, next.js blog, nextjs blog, graphcms, cms developer blog"
       />
@@ -31,7 +31,7 @@ const Blog = ({ postsConnection }: PostProps) => {
 
       {postsConnection &&
         postsConnection.edges.map(({ node }) => (
-          <BlogFeature
+          <BlogCard
             slug={node.slug}
             key={node.id}
             categories={node.categories}

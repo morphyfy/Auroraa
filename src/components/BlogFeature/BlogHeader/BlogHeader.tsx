@@ -76,12 +76,12 @@ const DateTitle = styled.p`
 `;
 
 type GrayMaterProps = {
-  dateString: string;
-  longTimeRead: string;
   title: string;
   excerpt: string;
   authorUrl: string;
+  dateString: string;
   authorName: string;
+  longTimeReadContent: string;
   thumbnailUrl: string;
   altThumbnail: string;
 };
@@ -103,7 +103,8 @@ const BlogHeader: React.FC<GrayMaterProps> = (props) => {
             </a>
           </Link>
           <DateTitle>
-            {parseDate(props.dateString)} • 👁️ {readTime(props.longTimeRead)}{" "}
+            {parseDate(props.dateString)} • 👁️{" "}
+            {readTime(props.longTimeReadContent)}
             min read
           </DateTitle>
         </AsideRight>
