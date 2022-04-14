@@ -4,7 +4,6 @@ import { parseDate } from "@utils/parseDate";
 import Link from "next/link";
 
 const CardWrapper = styled.div`
-  width: 100%;
   margin: 50px 0px;
 
   @media screen and (max-width: 653px) {

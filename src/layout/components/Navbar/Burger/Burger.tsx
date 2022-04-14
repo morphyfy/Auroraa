@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
+import SideMenu from "../SideMenu/MenuItem";
 
 type StateProps = {
   initial?: boolean;
@@ -8,20 +8,9 @@ type StateProps = {
   menuName?: string;
 };
 
-const animates = keyframes`
-  0%, 100%{
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
-  }
-  50%{
-    -webkit-transform: scale(0);
-    -ms-transform: scale(0);
-    -o-transform: scale(0);
-    transform: scale(0);
-  }
-`;
+type LineProps = {
+  isActive: boolean;
+};
 
 const Wrapper = styled.div`
   margin-right: 14px;
@@ -34,31 +23,41 @@ const Wrapper = styled.div`
     transition: all 0.3s ease-in-out;
   }
   #hamburger.is-active {
-    animation: ${animates} 0.6s forwards;
-  }
-  #hamburger.is-active .__line:nth-of-type(1),
-  #hamburger.is-active .__line:nth-of-type(2),
-  #hamburger.is-active .__line:nth-of-type(3) {
-    -webkit-transition-delay: 0.2s;
-    -o-transition-delay: 0.2s;
-    transition-delay: 0.2s;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition-delay: 0.6s;
+    -o-transition-delay: 0.6s;
+    transition-delay: 0.6s;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
   }
   #hamburger.is-active .__line:nth-of-type(2) {
-    opacity: 0;
+    width: 0px;
+  }
+
+  #hamburger.is-active .__line:nth-of-type(1),
+  #hamburger.is-active .__line:nth-of-type(3) {
+    -webkit-transition-delay: 0.3s;
+    -o-transition-delay: 0.3s;
+    transition-delay: 0.3s;
   }
   #hamburger.is-active .__line:nth-of-type(1) {
-    -webkit-transform: translateY(13px) rotate(45deg);
-    -ms-transform: translateY(13px) rotate(45deg);
-    -o-transform: translateY(13px) rotate(45deg);
-    transform: translateY(13px) rotate(45deg);
+    -webkit-transform: translateY(13px);
+    -ms-transform: translateY(13px);
+    -o-transform: translateY(13px);
+    transform: translateY(13px);
   }
   #hamburger.is-active .__line:nth-of-type(3) {
-    -webkit-transform: translateY(-13px) rotate(-45deg);
-    -ms-transform: translateY(-13px) rotate(-45deg);
-    -o-transform: translateY(-13px) rotate(-45deg);
-    transform: translateY(-13px) rotate(-45deg);
+    -webkit-transform: translateY(-13px) rotate(90deg);
+    -ms-transform: translateY(-13px) rotate(90deg);
+    -o-transform: translateY(-13px) rotate(90deg);
+    transform: translateY(-13px) rotate(90deg);
+    margin-top: 13px;
   }
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 653px) {
     display: block;
   }
 `;
@@ -69,13 +68,13 @@ const Hamburger = styled.button`
   background: transparent;
 `;
 
-const Line = styled.span`
+const Line = styled.span<LineProps>`
   width: 35px;
   height: 2px;
   right: 20px;
-  background-color: white;
+  background-color: #1bd6ca;
   display: block;
-  margin: 6px;
+  margin: ${({ isActive }) => (isActive ? "10px" : "8px")};
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
@@ -89,10 +88,10 @@ const Burger = () => {
   });
 
   const [disabled, setDisabled] = useState(false);
-  const [isClass, setClass] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleMenu = () => {
-    setClass(!isClass);
+    setIsOpen(!isOpen);
     disableMenu();
 
     if (state.initial === false) {
@@ -124,11 +123,17 @@ const Burger = () => {
 
   return (
     <Wrapper>
-      <Hamburger id="hamburger">
-        <Line className="__line"></Line>
-        <Line className="__line"></Line>
-        <Line className="__line"></Line>
+      <Hamburger
+        id="hamburger"
+        disabled={disabled}
+        className={isOpen ? `is-active` : `not-active`}
+        onClick={handleMenu}
+      >
+        <Line className="__line" isActive={isOpen}></Line>
+        <Line className="__line" isActive={isOpen}></Line>
+        <Line className="__line" isActive={isOpen}></Line>
       </Hamburger>
+      <SideMenu isOpened={isOpen} />
     </Wrapper>
   );
 };

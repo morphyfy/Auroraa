@@ -1,46 +1,18 @@
 /* eslint-disable react/prop-types */
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { maxWidth } from "@styles/variable.styles";
 import { menuItem } from "./constant/constant";
-import { useTheme } from "@emotion/react";
-import { ThemeStylesProps } from "@interface/@types";
 import styled from "@emotion/styled";
 import Link from "next/link";
 import Image from "next/image";
 import Burger from "./Burger/Burger";
 
-type NavbarProps = {
-  isScroll: boolean;
-};
-
 const Navbar = () => {
-  const theme = useTheme() as ThemeStylesProps;
-  const [isScroll, setIsScroll] = useState(false);
-
-  useEffect(() => {
-    changeBgNav();
-    window.addEventListener("scroll", changeBgNav);
-    return () => {
-      window.removeEventListener("scroll", changeBgNav);
-    };
-  }, []);
-
-  const changeBgNav = () => {
-    if (window.scrollY >= 90) {
-      setIsScroll(true);
-    } else {
-      setIsScroll(false);
-    }
-  };
-
   // styling
-  const Nav = styled.nav<NavbarProps>`
+  const Nav = styled.nav`
     height: 75px;
     margin: 10px 0px;
     display: flex;
-    box-shadow: ${(props) =>
-      props.isScroll ? "1px 2px 18px rgb(0 0 0 / 10%)" : "none"};
-    background: ${(props) => (props.isScroll ? theme.navBg : "transparent")};
     justify-content: center;
     align-items: center;
     position: sticky;
@@ -84,7 +56,7 @@ const Navbar = () => {
   `;
 
   return (
-    <Nav isScroll={isScroll}>
+    <Nav>
       <NavbarContainer>
         <Link href="/">
           <a>
@@ -98,16 +70,17 @@ const Navbar = () => {
             />
           </a>
         </Link>
+
+        <SideItem>
+          {menuItem.map(({ href, id, name }) => (
+            <Link href={href} key={id}>
+              <NavLinks>
+                <NavItem>{name}</NavItem>
+              </NavLinks>
+            </Link>
+          ))}
+        </SideItem>
       </NavbarContainer>
-      <SideItem>
-        {menuItem.map(({ href, id, name }) => (
-          <Link href={href} key={id}>
-            <NavLinks>
-              <NavItem>{name}</NavItem>
-            </NavLinks>
-          </Link>
-        ))}
-      </SideItem>
       <Burger />
     </Nav>
   );

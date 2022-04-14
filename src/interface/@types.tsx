@@ -48,5 +48,13 @@ export interface PostDetailProps {
 export type ThemeStylesProps = {
   body: string;
   text: string;
-  navBg: string;
+};
+
+export type NowPlayingProps = {
+  album: string;
+  albumImageUrl: string;
+  artist: string;
+  isPlaying: boolean;
+  songUrl: string;
+  title: string;
 };
