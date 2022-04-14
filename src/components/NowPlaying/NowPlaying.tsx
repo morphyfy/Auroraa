@@ -76,15 +76,16 @@ const NowPlaying = () => {
         ) : (
           <Spotify className="mb-0.5 h-6 w-6" />
         )}
-        <div className="inline-flex w-full flex-col truncate">
+        <div className="inline-flex w-full flex-col whitespace-normal overflow-hidden">
           {data && data.isPlaying ? (
             <a
-              className="max-w-max truncate font-bold text-[14px]"
+              className="max-w-max font-bold text-[14px] no-underline"
               href={data.songUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
               🎵{data.title}
+              <span className="hidden md:inline"> - {data.artist}</span>
             </a>
           ) : (
             <p className="font-bold text-[14px]">Spotify</p>

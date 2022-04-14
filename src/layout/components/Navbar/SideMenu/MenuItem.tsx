@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import Link from "next/link";
 import NowPlaying from "@components/NowPlaying/NowPlaying";
+import { menuItem } from "../constant/constant";
 
 type SideMenuProps = {
   isOpened: boolean;
@@ -32,7 +33,7 @@ const SideMenus = styled.ul<SideMenuProps>`
     transform: ${({ isOpened }) =>
       isOpened ? "translateX(0)" : "translateX(100%)"};
     height: 100vh;
-    width: 80%;
+    width: 100%;
     transition: transform 0.3s ease-in-out;
   }
 `;
@@ -40,7 +41,7 @@ const SideMenus = styled.ul<SideMenuProps>`
 const SideItems = styled.li`
   display: block;
   display: flex;
-  margin: 200px 0px;
+  margin: 120px 0px;
   padding: 40px;
   flex-direction: column;
 `;
@@ -56,33 +57,28 @@ const LinkItems = styled.a`
   color: #fff;
 `;
 
+const SpotifyWrapper = styled.div`
+  bottom: 0;
+  position: absolute;
+  margin-bottom: 30px;
+`;
+
 const SideMenu: React.FC<SideMenuProps> = ({ isOpened }) => {
   return (
     <Wrapper>
       <SideMenus isOpened={isOpened}>
         <SideItems>
-          <SideItemsWrapper>
-            <Link href="/">
-              <LinkItems>Home</LinkItems>
-            </Link>
-          </SideItemsWrapper>
-          <SideItemsWrapper>
-            <Link href="/blog">
-              <LinkItems>Blog</LinkItems>
-            </Link>
-          </SideItemsWrapper>
-          <SideItemsWrapper>
-            <Link href="/portofolio">
-              <LinkItems>Portofolio</LinkItems>
-            </Link>
-          </SideItemsWrapper>
-          <SideItemsWrapper>
-            <Link href="/kontak">
-              <LinkItems>Kontak</LinkItems>
-            </Link>
-          </SideItemsWrapper>
+          {menuItem.map(({ href, id, name }) => (
+            <SideItemsWrapper key={id}>
+              <Link href={href}>
+                <LinkItems>{name}</LinkItems>
+              </Link>
+            </SideItemsWrapper>
+          ))}
         </SideItems>
-        <NowPlaying />
+        <SpotifyWrapper>
+          <NowPlaying />
+        </SpotifyWrapper>
       </SideMenus>
     </Wrapper>
   );
