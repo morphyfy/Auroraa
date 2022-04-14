@@ -79,16 +79,19 @@ const NowPlaying = () => {
         <div className="inline-flex w-full flex-col whitespace-normal overflow-hidden">
           {data && data.isPlaying ? (
             <a
-              className="max-w-max font-bold text-[14px] no-underline"
+              className="max-w-max font-bold text-[14px] no-underline text-[#fafafa]"
               href={data.songUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
               🎵{data.title}
-              <span className="hidden md:inline"> - {data.artist}</span>
+              <span className="hidden md:inline text-[#fafafa]">
+                {" "}
+                - {data.artist}
+              </span>
             </a>
           ) : (
-            <p className="font-bold text-[14px]">Spotify</p>
+            <p className="font-bold text-[14px] text-[#fafafa]">Spotify</p>
           )}
         </div>
       </div>

@@ -18,7 +18,7 @@ const Blog = ({ postsConnection }: PostProps) => {
 
       <div className="flex flex-col items-start space-y-3 sm:p-4">
         <div className="flex items-center">
-          <div className="rounded-[12px] px-[5px] py-[4px] dark:bg-zinc-700/80">
+          <div className="rounded-[10px] px-[5px] py-[4px] dark:bg-zinc-700/80">
             <TiPen className="h-6 w-6" />
           </div>
           <h1 className="text-[30px] font-[IBMSans] ml-2 mt-1">Blog</h1>
