@@ -128,6 +128,7 @@ const Burger = () => {
         disabled={disabled}
         className={isOpen ? `is-active` : `not-active`}
         onClick={handleMenu}
+        type="button"
       >
         <Line className="__line" isActive={isOpen}></Line>
         <Line className="__line" isActive={isOpen}></Line>

@@ -28,8 +28,8 @@ const Home = ({ postsConnection }: PostProps) => {
 
       <div className="max-w-[600px] my-10 leading-7 sm:p-4 sm:my-4">
         <p className="text-[18px] font-[IBMSans] sm:text-[17px] xsm:text-[16px]">
-          👋 Halo... Salam kenal, saya adalah seorang antusias
-          <span className="text-[#1BD6CA] font-bold">frontend developer</span>
+          👋 Halo... Salam kenal, saya adalah seorang antusias{" "}
+          <span className="text-[#1BD6CA] font-bold">frontend developer</span>{" "}
           dan seorang{" "}
           <span className="text-[#E879F9] font-bold">
             self-taught programmer
