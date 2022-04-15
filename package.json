@@ -11,7 +11,9 @@
     "format": "prettier --write .",
     "test-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build",
     "prepare": "husky install",
-    "generate:components": "./tools/makeComponent.sh"
+    "generate:components": "./tools/makeComponent.sh",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "dependencies": {
     "@apollo/client": "^3.5.10",
@@ -42,6 +44,7 @@
     "@typescript-eslint/eslint-plugin": "^5.5.0",
     "@typescript-eslint/parser": "^5.5.0",
     "autoprefixer": "^10.4.4",
+    "cypress": "^9.5.4",
     "eslint": "^8.4.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-next": "12.0.7",
