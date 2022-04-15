@@ -17,12 +17,8 @@ const CardWrapper = styled.div`
 
 const CardTop = styled.div`
   display: flex;
-  font-size: 16px;
+  font-size: 14px;
   font-family: "IBMSans", sans-serif;
-
-  @media screen and (max-width: 428px) {
-    font-size: 15px;
-  }
 
   @media screen and (max-width: 280px) {
     flex-direction: column;
@@ -35,11 +31,7 @@ const CardContent = styled.div`
 
 const CardDate = styled.p`
   opacity: 0.7;
-  font-size: 16px;
-
-  @media screen and (max-width: 428px) {
-    font-size: 15px;
-  }
+  font-size: 14px;
 `;
 
 const CardCategories = styled.span`
@@ -66,18 +58,14 @@ const CardTitle = styled.h1`
   }
 
   @media screen and (max-width: 280px) {
-    font-size: 24px;
+    font-size: 22px;
   }
 `;
 
 const CardExcerpt = styled.p`
-  font-size: 17px;
+  font-size: 16px;
   font-family: "IBMSans", sans-serif;
   opacity: 0.7;
-
-  @media screen and (max-width: 428px) {
-    font-size: 16px;
-  }
 `;
 
 type BlogFeatureProps = {
@@ -113,3 +101,4 @@ const BlogCard: React.FC<BlogFeatureProps> = (props) => {
 };
 
 export default BlogCard;
+

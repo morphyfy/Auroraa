@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const QUERY_POSTS = gql`
-  query PostQuery($first: Int, $after: String) {
-    postsConnection(first: $first, after: $after) {
+  query PostQuery($first: Int, $skip: Int) {
+    postsConnection(first: $first, skip: $skip, orderBy: createdAt_DESC) {
       edges {
         node {
           id
@@ -18,8 +18,9 @@ export const QUERY_POSTS = gql`
         cursor
       }
       pageInfo {
-        endCursor
         hasNextPage
+        hasPreviousPage
+        pageSize
       }
     }
   }
@@ -51,3 +52,4 @@ export const QUERY_POSTS_DETAIL = gql`
     }
   }
 `;
+

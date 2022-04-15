@@ -13,10 +13,6 @@ export interface PostProps {
         }[];
       };
     }[];
-    pageInfo: {
-      endCursor: string;
-      hasNextPage: string;
-    };
   };
 }
 
@@ -58,3 +54,4 @@ export type NowPlayingProps = {
   songUrl: string;
   title: string;
 };
+

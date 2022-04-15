@@ -111,6 +111,11 @@ const WrapperArticle = styled.div`
       font-size: 16px;
     }
   }
+
+  del {
+    font-family: "IBMSans", sans-serif;
+  }
+
   img {
     border-radius: 5px !important;
     display: flex;
@@ -163,3 +168,4 @@ const BlogWrapper: React.FC<WrapperArticleProps> = ({ content }) => {
 };
 
 export default BlogWrapper;
+

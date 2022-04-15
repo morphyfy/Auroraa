@@ -29,17 +29,19 @@ const Blog = ({ postsConnection }: PostProps) => {
         </p>
       </div>
 
-      {postsConnection &&
-        postsConnection.edges.map(({ node }) => (
-          <BlogCard
-            slug={node.slug}
-            key={node.id}
-            categories={node.categories}
-            excerpt={node.excerpt}
-            title={node.title}
-            date={node.createdAt}
-          />
-        ))}
+      <div className="card__list-post">
+        {postsConnection &&
+          postsConnection.edges.map(({ node }) => (
+            <BlogCard
+              slug={node.slug}
+              key={node.id}
+              categories={node.categories}
+              excerpt={node.excerpt}
+              title={node.title}
+              date={node.createdAt}
+            />
+          ))}
+      </div>
     </Container>
   );
 };
@@ -50,7 +52,8 @@ export async function getServerSideProps() {
   const { data } = await client.query({
     query: QUERY_POSTS,
     variables: {
-      first: 5,
+      first: 100,
+      skip: 0,
     },
   });
 
@@ -62,3 +65,4 @@ export async function getServerSideProps() {
     },
   };
 }
+

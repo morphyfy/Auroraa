@@ -77,3 +77,4 @@ export async function getStaticProps({ params }: ParamsProps) {
     },
   };
 }
+

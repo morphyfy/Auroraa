@@ -70,7 +70,7 @@ const Home = ({ postsConnection }: PostProps) => {
         </div>
       </div>
 
-      <div className="w-full">
+      <div className="w-full card__list-post">
         {postsConnection &&
           postsConnection.edges.map(({ node }) => (
             <BlogCard
@@ -113,3 +113,4 @@ export async function getServerSideProps() {
 }
 
 export default Home;
+
