@@ -16,6 +16,10 @@ module.exports = {
   rules: {
     "require-jsdoc": 0,
     "new-cap": 0,
+    "spaced-comment": 0,
+    "valid-jsdoc": 0,
+    "no-invalid-this": 0,
+    "prefer-const": 0,
   },
   settings: {
     react: {
