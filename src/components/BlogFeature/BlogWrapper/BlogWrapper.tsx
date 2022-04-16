@@ -168,4 +168,3 @@ const BlogWrapper: React.FC<WrapperArticleProps> = ({ content }) => {
 };
 
 export default BlogWrapper;
-

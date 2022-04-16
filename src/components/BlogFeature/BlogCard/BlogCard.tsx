@@ -41,7 +41,7 @@ const CardCategories = styled.span`
   font-weight: bold;
 
   @media screen and (max-width: 280px) {
-    margin: 0px;
+    margin: 2px 0px;
   }
 `;
 
@@ -101,4 +101,3 @@ const BlogCard: React.FC<BlogFeatureProps> = (props) => {
 };
 
 export default BlogCard;
-
