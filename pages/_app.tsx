@@ -5,11 +5,14 @@ import ThemeProviders from "@config/themeProvider";
 import { Global } from "@emotion/react";
 import { globalStyles } from "@styles/global.styles";
 import { AppProps } from "next/app";
+import { DefaultSeo } from "next-seo";
+import { SEO } from "@components/MetaData/SEO";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProviders>
       <Layout>
+        <DefaultSeo {...SEO} />
         <Global styles={globalStyles} />
         <Component {...pageProps} />
       </Layout>

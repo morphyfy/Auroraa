@@ -23,7 +23,7 @@ const Blog = ({ postsConnection }: PostProps) => {
           </div>
           <h1 className="text-[30px] font-[IBMSans] ml-2 mt-1">Blog</h1>
         </div>
-        <p className="font-[IBMSans] opacity-80 text-[18px]">
+        <p className="font-[IBMSans] opacity-80 text-[16px]">
           Terkadang ingin mencurahkan isi pikiran. Biasanya saya membahas
           tentang tutorial atau teknologi.
         </p>
@@ -65,4 +65,3 @@ export async function getServerSideProps() {
     },
   };
 }
-

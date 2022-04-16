@@ -54,4 +54,3 @@ export type NowPlayingProps = {
   songUrl: string;
   title: string;
 };
-

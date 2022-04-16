@@ -52,4 +52,3 @@ export const QUERY_POSTS_DETAIL = gql`
     }
   }
 `;
-
