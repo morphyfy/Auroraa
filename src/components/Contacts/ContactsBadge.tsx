@@ -13,7 +13,7 @@ export function Contact({ href, icon, className, title }: ContactProps) {
     <a
       className={cn(
         "flex items-center justify-center gap-2 transition duration-300",
-        `rounded-lg p-[6px] px-3 md:px-4 sm:p-2.5 sm:px-3 `,
+        `rounded-lg p-[6px] px-3 md:px-4 sm:p-2.5 sm:px-[13px] `,
         ` no-underline`,
         className
       )}

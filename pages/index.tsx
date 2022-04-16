@@ -11,6 +11,7 @@ import { QUERY_POSTS } from "@graphql/graphql.query";
 import { Contact } from "@components/Contacts/ContactsBadge";
 import { FiGithub, FiAtSign, FiFacebook } from "react-icons/fi";
 import { MdOutlineArticle } from "react-icons/md";
+import { AiOutlineBehance } from "react-icons/ai";
 
 const Home = ({ postsConnection }: PostProps) => {
   return (
@@ -51,6 +52,12 @@ const Home = ({ postsConnection }: PostProps) => {
             title="Github"
             className={cn(`bg-[#15B891]`)}
             icon={<FiGithub size={19} />}
+          />
+          <Contact
+            href="https://behance.net/rizukyy27"
+            title="Behance"
+            className={cn(`bg-[#1A75E8]`)}
+            icon={<AiOutlineBehance size={24} />}
           />
           <Contact
             href="mailto:mrizkyy027@gmail.com"
