@@ -17,7 +17,7 @@ const Home = ({ postsConnection }: PostProps) => {
   return (
     <Container>
       <PageSeo
-        title="Rizkyy😎"
+        title="Hello👋"
         description="Seorang antusias frontend developer, memiliki passion dibidang web."
         key="rizkyy.space, rizkyy, rizkyy blog, blog, mdx, next.js blog, nextjs blog, graphcms, cms developer blog"
       />
