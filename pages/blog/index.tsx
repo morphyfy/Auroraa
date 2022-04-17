@@ -11,7 +11,7 @@ const Blog = ({ postsConnection }: PostProps) => {
   return (
     <Container>
       <PageSeo
-        title="— Blog Tulisan✍️"
+        title="Blog Tulisan✍️"
         description="Seorang antusias frontend developer, memiliki passion dibidang web."
         key="rizkyy.space, rizkyy, rizkyy blog, blog, mdx, next.js blog, nextjs blog, graphcms, cms developer blog"
       />
