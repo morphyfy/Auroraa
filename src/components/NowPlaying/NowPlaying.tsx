@@ -20,7 +20,7 @@ function AnimatedBars() {
         duration: 1.0,
         repeat: Infinity,
         easing: ["ease-in-out"],
-      }
+      },
     );
     animate(
       "#bar2",
@@ -36,7 +36,7 @@ function AnimatedBars() {
         duration: 1.5,
         repeat: Infinity,
         easing: ["ease-in-out"],
-      }
+      },
     );
     animate(
       "#bar3",
@@ -52,7 +52,7 @@ function AnimatedBars() {
         duration: 1.5,
         repeat: Infinity,
         easing: ["ease-in-out"],
-      }
+      },
     );
   }, []);
 
@@ -69,7 +69,7 @@ const NowPlaying = () => {
   const { data } = useSWR<NowPlayingProps>("/api/now-playing", fetcher);
 
   return (
-    <div className="px-10 font-[IBMSans]">
+    <div className="px-10 ">
       <div className="flex items-center space-x-2">
         {data && data.isPlaying ? (
           <AnimatedBars />

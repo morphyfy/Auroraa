@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse,
 ) {
   const response = await getNowPlaying();
 
@@ -28,7 +28,7 @@ export default async function handler(
 
   res.setHeader(
     "Cache-Control",
-    "public, s-maxage=60, stale-while-revalidate=30"
+    "public, s-maxage=60, stale-while-revalidate=30",
   );
 
   return res.status(200).json({
