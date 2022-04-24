@@ -28,7 +28,7 @@ const Home = ({ postsConnection }: PostProps) => {
       />
 
       <div className="max-w-[600px] my-10 leading-7 sm:p-4 sm:my-4">
-        <p className="text-[18px] font-[IBMSans] sm:text-[17px] xsm:text-[16px]">
+        <p className="text-[18px] sm:text-[17px] xsm:text-[16px] font-sans">
           👋 Halo... Salam kenal, saya adalah seorang antusias{" "}
           <span className="text-[#1BD6CA] font-bold">frontend developer</span>{" "}
           dan seorang{" "}
@@ -73,7 +73,7 @@ const Home = ({ postsConnection }: PostProps) => {
           <div className="rounded-[10px] px-[5px] py-[4px] dark:bg-zinc-700/80">
             <MdOutlineArticle className="h-6 w-6" />
           </div>
-          <h1 className="text-[25px] font-[IBMSans] ml-2">Tulisan terbaru</h1>
+          <h1 className="text-[25px] ml-2 font-serif">Tulisan terbaru</h1>
         </div>
       </div>
 
@@ -91,7 +91,7 @@ const Home = ({ postsConnection }: PostProps) => {
           ))}
         <Link href="/blog">
           <span
-            className="block my-5 font-[IBMSans] text-[18px] font-bold cursor-pointer
+            className="block my-5 font-sans text-[18px] font-bold cursor-pointer
             text-[#1bd6ca] sm:p-4"
           >
             Lihat Semua →

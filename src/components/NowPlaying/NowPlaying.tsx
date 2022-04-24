@@ -20,7 +20,7 @@ function AnimatedBars() {
         duration: 1.0,
         repeat: Infinity,
         easing: ["ease-in-out"],
-      }
+      },
     );
     animate(
       "#bar2",
@@ -36,7 +36,7 @@ function AnimatedBars() {
         duration: 1.5,
         repeat: Infinity,
         easing: ["ease-in-out"],
-      }
+      },
     );
     animate(
       "#bar3",
@@ -52,7 +52,7 @@ function AnimatedBars() {
         duration: 1.5,
         repeat: Infinity,
         easing: ["ease-in-out"],
-      }
+      },
     );
   }, []);
 
@@ -69,7 +69,7 @@ const NowPlaying = () => {
   const { data } = useSWR<NowPlayingProps>("/api/now-playing", fetcher);
 
   return (
-    <div className="px-10 font-[IBMSans]">
+    <div className="px-8 font-serif">
       <div className="flex items-center space-x-2">
         {data && data.isPlaying ? (
           <AnimatedBars />
@@ -79,7 +79,7 @@ const NowPlaying = () => {
         <div className="inline-flex w-full flex-col whitespace-normal overflow-hidden">
           {data && data.isPlaying ? (
             <a
-              className="max-w-max font-bold text-[13px] no-underline text-[#fafafa]"
+              className="max-w-max font-bold text-[12px] no-underline text-[#fafafa]"
               href={data.songUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -91,7 +91,7 @@ const NowPlaying = () => {
               </span>
             </a>
           ) : (
-            <p className="font-bold text-[13px] text-[#fafafa]">
+            <p className="font-bold text-[12px] text-[#fafafa]">
               Not Playing - Spotify
             </p>
           )}

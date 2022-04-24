@@ -20,6 +20,7 @@
     "@apollo/client": "^3.5.10",
     "classnames": "^2.3.1",
     "disqus-react": "^1.1.2",
+    "framer-motion": "5.0.0",
     "graphql": "^16.3.0",
     "highlight.js": "^11.4.0",
     "markdown-to-jsx": "^7.1.7",
@@ -38,6 +39,7 @@
   "devDependencies": {
     "@emotion/babel-plugin": "^11.7.2",
     "@emotion/core": "^11.0.0",
+    "@emotion/css": "^11.9.0",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.6.0",
     "@types/node": "16.11.11",

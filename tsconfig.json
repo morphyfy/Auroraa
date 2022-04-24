@@ -33,11 +33,13 @@
       "@components/*": ["src/components/*"],
       "@styles/*": ["src/styles/*"],
       "@layout/*": ["src/layout/*"],
+      "@hooks/*": ["src/hooks/*"],
       "@utils/*": ["src/utils/*"],
       "@interface/*": ["src/interface/*"],
       "@data/*": ["src/data/*"],
       "@config/*": ["src/config/*"],
       "@lib/*": ["src/lib/*"],
+      "@animation/*": ["src/animation/*"],
       "@graphql/*": ["src/graphql/*"]
     }
   },
