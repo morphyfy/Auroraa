@@ -51,5 +51,5 @@ yarn-error.log*
 # Built Visual Studio Code Extensions
 *.vsix
 
-#
+# PWA Service Worker In Local Development
 public/sw.js
