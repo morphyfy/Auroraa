@@ -7,58 +7,58 @@ import Link from "next/link";
 import Image from "next/image";
 import SideMenu from "./SideMenu/SideMenu";
 
+const Nav = styled.header`
+  height: 75px;
+  margin: 15px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  transition: all 0.2s ease-in-out;
+
+  @media screen and (max-width: 653px) {
+    margin: 0px;
+  }
+`;
+
+const NavbarContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  z-index: 1;
+  width: 100%;
+  max-width: ${maxWidth.medium};
+
+  @media screen and (max-width: 653px) {
+    padding: 15px;
+    height: 85px;
+    flex-direction: row-reverse;
+  }
+`;
+
+const SideItem = styled.div`
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 653px) {
+    display: none;
+  }
+`;
+
+const NavLinks = styled.ul`
+  font-family: "IBMSans", sans-serif;
+  font-size: 19px;
+  padding-left: 40px;
+`;
+
+const NavItem = styled.li`
+  cursor: pointer;
+  list-style: none;
+`;
+
 const Navbar = () => {
-  const Nav = styled.header`
-    height: 75px;
-    margin: 15px 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    transition: all 0.2s ease-in-out;
-
-    @media screen and (max-width: 653px) {
-      margin: 0px;
-    }
-  `;
-
-  const NavbarContainer = styled.div`
-    display: flex;
-    justify-content: space-between;
-    height: 50px;
-    z-index: 1;
-    width: 100%;
-    max-width: ${maxWidth.medium};
-
-    @media screen and (max-width: 653px) {
-      padding: 15px;
-      height: 85px;
-      flex-direction: row-reverse;
-    }
-  `;
-
-  const SideItem = styled.div`
-    display: flex;
-    align-items: center;
-
-    @media screen and (max-width: 653px) {
-      display: none;
-    }
-  `;
-
-  const NavLinks = styled.ul`
-    font-family: "IBMSans", sans-serif;
-    font-size: 19px;
-    padding-left: 40px;
-  `;
-
-  const NavItem = styled.li`
-    cursor: pointer;
-    list-style: none;
-  `;
-
   return (
     <>
       <SideMenu />
