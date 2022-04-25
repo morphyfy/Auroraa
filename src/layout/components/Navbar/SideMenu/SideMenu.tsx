@@ -1,5 +1,4 @@
-import React, { useRef } from "react";
-import { useDimensions } from "@hooks/useDimensions";
+import React from "react";
 import { useCycle, motion } from "framer-motion";
 import { Navigation } from "./Navigation";
 import { Burger } from "../Burger/Burger";
@@ -10,16 +9,12 @@ import cn from "classnames";
 
 const SideMenu = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
-  const containerRef = useRef(null);
-  const { height } = useDimensions(containerRef);
 
   return (
     <div className="sticky top-0 z-40">
       <motion.nav
         initial={false}
         animate={isOpen ? "open" : "closed"}
-        custom={height}
-        ref={containerRef}
         className="hidden sm:block relative"
       >
         <motion.div

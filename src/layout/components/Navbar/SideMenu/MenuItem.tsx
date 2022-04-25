@@ -17,7 +17,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({ name, href }) => {
       className="hidden sm:block font-serif text-4xl py-5 px-1"
     >
       <Link href={href}>
-        <a className="no-underline">{name}</a>
+        <a className="no-underline text-white">{name}</a>
       </Link>
     </motion.li>
   );
