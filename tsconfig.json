@@ -25,6 +25,7 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "sourceMap": true,
+    "types": ["cypress"],
     "strict": true,
     "target": "es2018",
     "incremental": false,
@@ -43,6 +44,11 @@
       "@graphql/*": ["src/graphql/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "cypress/integration/**.ts"
+  ],
   "exclude": ["node_modules"]
 }
