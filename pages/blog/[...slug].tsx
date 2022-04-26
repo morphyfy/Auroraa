@@ -12,7 +12,7 @@ export default function Article({ post }: PostDetailProps) {
   return (
     <Container>
       <BlogSeo
-        title={`${post.title} | Blog Tulisan`}
+        title={`${post.title} | Blog Tulisan✍️`}
         url={`https://rizkyy.space/article/${post.slug}`}
         description={post.title}
         date={post.createdAt}

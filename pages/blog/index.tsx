@@ -16,7 +16,7 @@ const Blog = ({ postsConnection }: PostProps) => {
         key="rizkyy.space, rizkyy, rizkyy blog, blog, mdx, next.js blog, nextjs blog, graphcms, cms developer blog"
       />
 
-      <div className="flex items-start space-y-3 sm:p-4">
+      <div className="flex flex-col items-start space-y-3 sm:p-4">
         <div className="flex items-center">
           <div className="rounded-[10px] px-[5px] py-[4px] dark:bg-zinc-700/80">
             <TiPen className="h-6 w-6" />
