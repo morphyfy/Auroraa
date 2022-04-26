@@ -1,19 +1,13 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import styled from "@emotion/styled";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-
-interface LayoutProps {
-  children: ReactNode;
-}
 
 const Main = styled.main`
   margin: 20px 0px;
 `;
 
-const Layout = (props: LayoutProps) => {
-  const { children } = props;
-
+const Layout = (children: React.ReactNode) => {
   return (
     <React.Fragment>
       <Navbar />
@@ -24,3 +18,4 @@ const Layout = (props: LayoutProps) => {
 };
 
 export default Layout;
+
