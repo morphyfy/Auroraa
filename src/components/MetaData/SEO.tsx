@@ -1,7 +1,8 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { DefaultSeoProps, NextSeo } from "next-seo";
+import { ArticleJsonLd, DefaultSeoProps, NextSeo } from "next-seo";
 import moment from "moment";
+import { generateOgImage } from "@lib/og";
 
 export type PageSeoProps = {
   title: string;
@@ -35,6 +36,17 @@ export const SEO: DefaultSeoProps = {
     title: defaultMeta.title,
     site_name: defaultMeta.siteName,
     url: `defaultMeta.url`,
+    images: [
+      {
+        url: generateOgImage({
+          title: defaultMeta.title,
+          meta: defaultMeta.siteName,
+        }),
+        width: 1200,
+        height: 600,
+        alt: defaultMeta.title,
+      },
+    ],
   },
   twitter: {
     handle: "@ioofyy",
@@ -66,6 +78,11 @@ export function BlogSeo({ title, description, date, url }: BlogSeoProps) {
 
   const intoMoment = moment(publishedAt).format("DD MMMM YYYY");
 
+  const ogImage = generateOgImage({
+    title: title,
+    meta: "rizkyy.space · " + intoMoment,
+  });
+
   return (
     <>
       <NextSeo
@@ -78,7 +95,23 @@ export function BlogSeo({ title, description, date, url }: BlogSeoProps) {
           url,
           title,
           description: description,
+          images: [
+            {
+              url: ogImage,
+              alt: title,
+            },
+          ],
         }}
+      />
+      <ArticleJsonLd
+        authorName={defaultMeta.title}
+        publisherName={defaultMeta.title}
+        datePublished={publishedAt}
+        dateModified={publishedAt}
+        url={url}
+        images={[ogImage]}
+        title={title}
+        description={description}
       />
     </>
   );
