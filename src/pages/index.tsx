@@ -91,7 +91,7 @@ const Home = (allPosts: PostProps) => {
           ))}
         <Link href="/blog" passHref>
           <span
-            className="my-5 block cursor-pointer font-sans text-[18px] font-bold
+            className="my-5 block cursor-pointer font-sans text-[16px] font-bold
             text-[#1bd6ca] sm:p-4"
           >
             Lihat Semua →

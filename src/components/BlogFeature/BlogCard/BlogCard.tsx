@@ -66,6 +66,16 @@ const CardExcerpt = styled.p`
   font-size: 16px;
   font-family: "IBMSans", sans-serif;
   opacity: 0.7;
+  width: 620px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @media screen and (max-width: 653px) {
+    width: 100%;
+  }
 `;
 
 type BlogFeatureProps = {
