@@ -14,6 +14,13 @@ export interface PostProps {
       };
     }[];
   };
+
+  authors: {
+    photo: {
+      fileName: string;
+      url: string;
+    };
+  }[];
 }
 
 export interface PostDetailProps {

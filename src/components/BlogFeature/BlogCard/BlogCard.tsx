@@ -85,13 +85,13 @@ const BlogCard: React.FC<BlogFeatureProps> = (props) => {
       <CardTop>
         <CardDate>{parseDate(props.date)}</CardDate>
         {props.categories.map((cat, index) => (
-          <Link key={index} href={`/blog?query=${cat.slug}`}>
+          <Link key={index} href={`/blog?query=${cat.slug}`} passHref>
             <CardCategories> #{cat.name}</CardCategories>
           </Link>
         ))}
       </CardTop>
       <CardContent>
-        <Link href={`/blog/${props.slug}`}>
+        <Link href={`/blog/${props.slug}`} passHref>
           <CardTitle>{props.title}</CardTitle>
         </Link>
         <CardExcerpt>{props.excerpt}</CardExcerpt>

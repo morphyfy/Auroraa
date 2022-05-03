@@ -33,7 +33,7 @@ const ThemeProviders = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     setMounted(true);
-  });
+  }, []);
 
   const body = (
     <ThemeProvider theme={theme}>

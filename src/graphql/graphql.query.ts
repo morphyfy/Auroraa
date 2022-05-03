@@ -23,6 +23,12 @@ export const QUERY_POSTS = gql`
         pageSize
       }
     }
+    authors {
+      photo {
+        url
+        fileName
+      }
+    }
   }
 `;
 
