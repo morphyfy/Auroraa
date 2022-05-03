@@ -15,7 +15,7 @@ const SideMenu = () => {
       <motion.nav
         initial={false}
         animate={isOpen ? "open" : "closed"}
-        className="hidden sm:block relative"
+        className="relative hidden sm:block"
       >
         <motion.div
           className={cn(

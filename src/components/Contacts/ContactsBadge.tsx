@@ -13,7 +13,7 @@ export function Contact({ href, icon, className, title }: ContactProps) {
     <a
       className={cn(
         "flex items-center justify-center gap-2 transition duration-300",
-        `rounded-lg p-[6px] px-3 md:px-4 sm:p-2.5 sm:px-[13px] font-sans`,
+        `rounded-lg p-[6px] px-3 font-sans md:px-4 sm:p-2.5 sm:px-[13px]`,
         ` no-underline`,
         className,
       )}
@@ -22,7 +22,7 @@ export function Contact({ href, icon, className, title }: ContactProps) {
       target="_blank"
     >
       {icon}
-      <span className="sm:hidden  pt-[3px]">{title}</span>
+      <span className="pt-[3px] sm:hidden">{title}</span>
     </a>
   );
 }

@@ -17,7 +17,7 @@ export const Burger = ({ toggle }: any) => (
   <button
     onClick={toggle}
     className={cn(
-      "outline-none border-none bg-transparent cursor-pointer absolute hidden sm:block",
+      "absolute hidden cursor-pointer border-none bg-transparent outline-none sm:block",
       css`
         -webkit-user-select: none;
         -moz-user-select: none;

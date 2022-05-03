@@ -29,12 +29,12 @@ const Home = (allPosts: PostProps) => {
           <Profile srcUrl={author.photo.url} altText="author" key={index} />
         ))}
 
-      <div className="max-w-[600px] my-10 leading-7 sm:p-4 sm:my-4">
-        <p className="text-[18px] sm:text-[17px] xsm:text-[16px] font-sans">
+      <div className="my-10 max-w-[600px] leading-7 sm:my-4 sm:p-4">
+        <p className="font-sans text-[18px] sm:text-[17px] xsm:text-[16px]">
           👋 Halo... Salam kenal, saya adalah seorang antusias{" "}
-          <span className="text-[#1BD6CA] font-bold">frontend developer</span>{" "}
+          <span className="font-bold text-[#1BD6CA]">frontend developer</span>{" "}
           dan seorang{" "}
-          <span className="text-[#E879F9] font-bold">
+          <span className="font-bold text-[#E879F9]">
             self-taught programmer
           </span>{" "}
           dari Bogor, Indonesia. Dan saya sangat sering menggunakan JS dan CSS
@@ -74,10 +74,10 @@ const Home = (allPosts: PostProps) => {
           <div className="rounded-[10px] px-[5px] py-[4px] dark:bg-zinc-700/80">
             <MdOutlineArticle className="h-6 w-6" />
           </div>
-          <h1 className="text-[25px] ml-2 font-serif">Tulisan terbaru</h1>
+          <h1 className="ml-2 font-serif text-[25px]">Tulisan terbaru</h1>
         </div>
       </div>
-      <div className="w-full card__list-post">
+      <div className="card__list-post w-full">
         {postsConnection &&
           postsConnection.edges.map(({ node }) => (
             <BlogCard
@@ -91,7 +91,7 @@ const Home = (allPosts: PostProps) => {
           ))}
         <Link href="/blog" passHref>
           <span
-            className="block my-5 font-sans text-[18px] font-bold cursor-pointer
+            className="my-5 block cursor-pointer font-sans text-[18px] font-bold
             text-[#1bd6ca] sm:p-4"
           >
             Lihat Semua →

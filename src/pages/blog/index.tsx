@@ -21,9 +21,9 @@ const Blog = ({ postsConnection }: PostProps) => {
           <div className="rounded-[10px] px-[5px] py-[4px] dark:bg-zinc-700/80">
             <TiPen className="h-6 w-6" />
           </div>
-          <h1 className="text-[30px] font-serif ml-2 mt-1">Blog</h1>
+          <h1 className="ml-2 mt-1 font-serif text-[30px]">Blog</h1>
         </div>
-        <p className="font-sans opacity-80 text-[16px]">
+        <p className="font-sans text-[16px] opacity-80">
           Terkadang ingin mencurahkan isi pikiran. Biasanya saya membahas
           tentang tutorial atau teknologi.
         </p>

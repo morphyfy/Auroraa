@@ -6,7 +6,7 @@ import { ulvariants } from "@animation/animations";
 
 export const Navigation = () => {
   return (
-    <motion.ul variants={ulvariants} className="p-6 top-36 w-56 absolute">
+    <motion.ul variants={ulvariants} className="absolute top-36 w-56 p-6">
       {menuItem.map((i) => (
         <MenuItem name={i.name} key={i.id} href={i.href} />
       ))}

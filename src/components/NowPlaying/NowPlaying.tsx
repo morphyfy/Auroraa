@@ -76,22 +76,22 @@ const NowPlaying = () => {
         ) : (
           <Spotify className="mb-0.5 h-6 w-6" />
         )}
-        <div className="inline-flex w-full flex-col whitespace-normal overflow-hidden">
+        <div className="inline-flex w-full flex-col overflow-hidden whitespace-normal">
           {data && data.isPlaying ? (
             <a
-              className="max-w-max font-bold text-[12px] no-underline text-[#fafafa]"
+              className="max-w-max text-[12px] font-bold text-[#fafafa] no-underline"
               href={data.songUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
               🎵{data.title}
-              <span className="hidden md:inline text-[#fafafa]">
+              <span className="hidden text-[#fafafa] md:inline">
                 {" "}
                 - {data.artist}
               </span>
             </a>
           ) : (
-            <p className="font-bold text-[12px] text-[#fafafa]">
+            <p className="text-[12px] font-bold text-[#fafafa]">
               Not Playing - Spotify
             </p>
           )}

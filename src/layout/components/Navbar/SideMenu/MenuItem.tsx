@@ -14,10 +14,10 @@ export const MenuItem: React.FC<MenuItemProps> = ({ name, href }) => {
       variants={livariants}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
-      className="hidden sm:block font-serif text-4xl py-5 px-1"
+      className="hidden py-5 px-1 font-serif text-4xl sm:block"
     >
       <Link href={href}>
-        <a className="no-underline text-white">{name}</a>
+        <a className="text-white no-underline">{name}</a>
       </Link>
     </motion.li>
   );
