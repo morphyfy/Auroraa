@@ -2,4 +2,21 @@
 . "$(dirname "$0")/_/husky.sh"
 . "$(dirname "$0")/common.sh"
 
+echo 'Commiting and initialize your code ...'
+
 yarn lint-staged
+
+# If everything passes... Now we can commit
+echo '🤔🤔🤔🤔... Alright.... Code looks good to me... Trying to build now. 🤔🤔🤔🤔'
+
+yarn run build ||
+(
+    echo '❌👷🔨❌ Better good but still error... Because your build failed ❌👷🔨❌
+            Next build failed: View the errors above to see why.
+    '
+    false;
+)
+
+
+# If everything passes... Now we can commit
+echo '✅✅✅✅ Success passed a configuration... I am committing this now. ✅✅✅✅'
