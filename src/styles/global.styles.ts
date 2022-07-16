@@ -9,11 +9,13 @@ export const globalStyles = css`
   @font-face {
     font-family: "Grotesk";
     src: url("/fonts/Grotesk.woff2") format("woff2");
+    font-display: swap;
   }
 
   @font-face {
     font-family: "IBMSans";
     src: url("/fonts/IBMSans.woff2") format("woff2");
+    font-display: swap;
   }
 
   html {
