@@ -29,7 +29,7 @@ const Heading = styled.h1`
 `;
 
 const Excerpt = styled.h2`
-  font-size: 1.1rem;
+  font-size: 1rem;
   opacity: 0.8;
   line-height: 1.5;
   font-family: "IBMSans", sans-serif;

@@ -1,12 +1,20 @@
 import React from "react";
 import client from "@lib/apollo";
 import BlogHeader from "@components/BlogFeature/BlogHeader/BlogHeader";
-import BlogComments from "@components/BlogFeature/BlogComments/BlogComments";
 import BlogWrapper from "@components/BlogFeature/BlogWrapper/BlogWrapper";
 import { Container } from "@styles/global.styles";
 import { QUERY_POSTS, QUERY_POSTS_DETAIL } from "@graphql/graphql.query";
-import { PostDetailProps, PostProps } from "@interface/@types";
+import { PostDetailType, PostType } from "@interface/data";
 import { BlogSeo } from "@components/MetaData/SEO";
+import { z } from "zod";
+
+type PostDetailProps = z.infer<typeof PostDetailType>;
+type PostType = z.infer<typeof PostType>;
+interface ParamsProps {
+  params: {
+    slug: [string];
+  };
+}
 
 export default function Article({ post }: PostDetailProps) {
   return (
@@ -28,23 +36,16 @@ export default function Article({ post }: PostDetailProps) {
         altThumbnail={post.thumbnailImage.fileName}
       />
       <BlogWrapper content={post.content} />
-      <BlogComments slug={post.slug} title={post.title} />
     </Container>
   );
 }
 
-interface ParamsProps {
-  params: {
-    slug: [string];
-  };
-}
-
 export async function getStaticPaths() {
-  const { data } = await client.query({
+  const { data } = await client.query<PostType>({
     query: QUERY_POSTS,
   });
 
-  const { postsConnection }: PostProps = data;
+  const { postsConnection } = data;
 
   const paths = postsConnection.edges.map((edge) => ({
     params: {
@@ -62,7 +63,7 @@ export async function getStaticProps({ params }: ParamsProps) {
   // get slug from params
   const slug = params.slug[0];
 
-  const { data } = await client.query({
+  const { data } = await client.query<PostDetailProps>({
     query: QUERY_POSTS_DETAIL,
     variables: {
       slug,

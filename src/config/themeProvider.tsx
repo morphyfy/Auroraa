@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { css, Global, ThemeProvider, useTheme } from "@emotion/react";
 import { lightTheme, darkTheme } from "@styles/theme.styles";
-import { ThemeStylesProps } from "@interface/@types";
+import { ThemeStylesProps } from "@interface/styles";
 import useDarkMode from "use-dark-mode";
 
 const ThemeStyles = () => {

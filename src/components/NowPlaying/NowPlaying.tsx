@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
 import { animate } from "motion";
-import { NowPlayingProps } from "@interface/@types";
+import { PlayingMusicType } from "@interface/data";
+import { z } from "zod";
 import { fetcher } from "@utils/fetcher";
 import useSWR from "swr";
 import Spotify from "@components/Icons/Spotify";
+
+type NowPlayingProps = z.infer<typeof PlayingMusicType>;
 
 function AnimatedBars() {
   useEffect(() => {

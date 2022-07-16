@@ -84,8 +84,8 @@ type BlogFeatureProps = {
   slug: string;
   excerpt: string;
   categories: {
-    name: string;
-    slug: string;
+    name?: string;
+    slug?: string;
   }[];
 };
 

@@ -3,9 +3,12 @@ import React from "react";
 import BlogCard from "@components/BlogFeature/BlogCard/BlogCard";
 import { TiPen } from "react-icons/ti";
 import { QUERY_POSTS } from "@graphql/graphql.query";
-import { PostProps } from "@interface/@types";
+import { PostType } from "@interface/data";
 import { Container } from "@styles/global.styles";
 import { PageSeo } from "@components/MetaData/SEO";
+import { z } from "zod";
+
+type PostProps = z.infer<typeof PostType>;
 
 const Blog = ({ postsConnection }: PostProps) => {
   return (
