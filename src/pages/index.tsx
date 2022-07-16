@@ -5,13 +5,16 @@ import cn from "classnames";
 import Profile from "@components/Thumbnail/Profile";
 import BlogCard from "@components/BlogFeature/BlogCard/BlogCard";
 import { Container } from "@styles/global.styles";
-import { PostProps } from "@interface/@types";
+import { PostType } from "@interface/data";
 import { PageSeo } from "@components/MetaData/SEO";
 import { QUERY_POSTS } from "@graphql/graphql.query";
 import { Contact } from "@components/Contacts/ContactsBadge";
 import { FiGithub, FiAtSign, FiFacebook } from "react-icons/fi";
 import { MdOutlineArticle } from "react-icons/md";
 import { AiOutlineBehance } from "react-icons/ai";
+import { z } from "zod";
+
+type PostProps = z.infer<typeof PostType>;
 
 const Home = (allPosts: PostProps) => {
   const { postsConnection, authors } = allPosts;
@@ -30,7 +33,7 @@ const Home = (allPosts: PostProps) => {
         ))}
 
       <div className="my-10 max-w-[600px] leading-7 sm:my-4 sm:p-4">
-        <p className="font-sans text-[18px] sm:text-[17px] xsm:text-[16px]">
+        <p className="font-sans text-[17px] sm:text-[17px] xsm:text-[16px]">
           👋 Halo... Salam kenal, saya adalah seorang antusias{" "}
           <span className="font-bold text-[#1BD6CA]">frontend developer</span>{" "}
           dan seorang{" "}

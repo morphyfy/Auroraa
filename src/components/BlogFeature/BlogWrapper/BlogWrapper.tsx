@@ -48,7 +48,7 @@ const WrapperArticle = styled.div`
   p {
     em {
       font-family: "IBMSans", sans-serif;
-      font-size: 17px;
+      font-size: 16px;
       opacity: 1;
       line-height: 1.5;
     }
@@ -78,7 +78,7 @@ const WrapperArticle = styled.div`
     padding: 0px 15px;
     li {
       font-family: "IBMSans", sans-serif;
-      font-size: 18px;
+      font-size: 17px;
     }
   }
   a {
