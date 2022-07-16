@@ -41,7 +41,8 @@
       "@config/*": ["src/config/*"],
       "@lib/*": ["src/lib/*"],
       "@animation/*": ["src/animation/*"],
-      "@graphql/*": ["src/graphql/*"]
+      "@graphql/*": ["src/graphql/*"],
+      "@constants/*": ["src/constants/*"]
     }
   },
   "include": [
