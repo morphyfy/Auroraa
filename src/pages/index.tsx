@@ -106,7 +106,7 @@ const Home = (allPosts: PostProps) => {
 };
 
 export async function getServerSideProps() {
-  const { data } = await client.query({
+  const { data } = await client.query<PostProps>({
     query: QUERY_POSTS,
     variables: {
       first: 3,
