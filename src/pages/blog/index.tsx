@@ -60,11 +60,9 @@ export async function getServerSideProps() {
     },
   });
 
-  const { postsConnection } = data || {};
-
   return {
     props: {
-      postsConnection,
+      postsConnection: data?.postsConnection,
     },
   };
 }

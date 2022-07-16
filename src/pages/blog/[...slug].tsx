@@ -45,9 +45,7 @@ export async function getStaticPaths() {
     query: QUERY_POSTS,
   });
 
-  const { postsConnection } = data || {};
-
-  const paths = postsConnection.edges.map((edge) => ({
+  const paths = data?.postsConnection?.edges?.map((edge) => ({
     params: {
       slug: [edge.node.slug],
     },
@@ -70,11 +68,9 @@ export async function getStaticProps({ params }: ParamsProps) {
     },
   });
 
-  const { post } = data || {};
-
   return {
     props: {
-      post,
+      post: data?.post,
     },
   };
 }
