@@ -55,7 +55,7 @@ const Profile: React.FC<ThumbnailProps> = ({ altText, srcUrl }) => {
         blurDataURL={`/_next/image?url=${srcUrl}&w=16&q=1`}
       />
       <ProfileName>Muhamad Rizky</ProfileName>
-      <ProfileCareer>— Front-end Developer</ProfileCareer>
+      <ProfileCareer>— Front End Dev</ProfileCareer>
     </ProfileWrapper>
   );
 };

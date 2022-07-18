@@ -1,7 +1,6 @@
 import React from "react";
 import client from "@lib/apollo";
 import Link from "next/link";
-import cn from "classnames";
 import Profile from "@components/Thumbnail/Profile";
 import BlogCard from "@components/BlogFeature/BlogCard/BlogCard";
 import { Container } from "@styles/global.styles";
@@ -9,10 +8,9 @@ import { PostType } from "@interface/data";
 import { PageSeo } from "@components/MetaData/SEO";
 import { QUERY_POSTS } from "@graphql/graphql.query";
 import { Contact } from "@components/Contacts/ContactsBadge";
-import { FiGithub, FiAtSign, FiFacebook } from "react-icons/fi";
 import { MdOutlineArticle } from "react-icons/md";
-import { AiOutlineBehance } from "react-icons/ai";
 import { z } from "zod";
+import { ItemContact } from "@components/Contacts/ItemContact";
 
 type PostProps = z.infer<typeof PostType>;
 
@@ -35,8 +33,8 @@ const Home = (allPosts: PostProps) => {
       <div className="my-10 max-w-[600px] leading-7 sm:my-4 sm:p-4">
         <p className="font-sans text-[17px] sm:text-[17px] xsm:text-[16px]">
           👋 Halo... Salam kenal, saya adalah seorang antusias{" "}
-          <span className="font-bold text-[#1BD6CA]">frontend developer</span>{" "}
-          dan seorang{" "}
+          <span className="font-bold text-[#1BD6CA]">frontend devs</span> dan
+          seorang{" "}
           <span className="font-bold text-[#E879F9]">
             self-taught programmer
           </span>{" "}
@@ -46,30 +44,9 @@ const Home = (allPosts: PostProps) => {
         </p>
 
         <div className="my-8 flex flex-wrap gap-4 text-center">
-          <Contact
-            href="https://www.facebook.com/rizukyy27/"
-            title="Facebook"
-            className={cn(`bg-sky-500`)}
-            icon={<FiFacebook size={19} />}
-          />
-          <Contact
-            href="https://github.com/ioofy"
-            title="Github"
-            className={cn(`bg-[#15B891]`)}
-            icon={<FiGithub size={19} />}
-          />
-          <Contact
-            href="https://behance.net/rizukyy27"
-            title="Behance"
-            className={cn(`bg-[#1A75E8]`)}
-            icon={<AiOutlineBehance size={24} />}
-          />
-          <Contact
-            href="mailto:mrizkyy027@gmail.com"
-            title="Email"
-            className={cn(`bg-[#863892]`)}
-            icon={<FiAtSign size={19} />}
-          />
+          {ItemContact.map((item, index) => (
+            <Contact key={index} {...item} />
+          ))}
         </div>
       </div>
       <div className="flex flex-col items-start space-y-3 sm:p-4">

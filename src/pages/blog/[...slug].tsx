@@ -4,11 +4,12 @@ import BlogHeader from "@components/BlogFeature/BlogHeader/BlogHeader";
 import BlogWrapper from "@components/BlogFeature/BlogWrapper/BlogWrapper";
 import { Container } from "@styles/global.styles";
 import { QUERY_POSTS, QUERY_POSTS_DETAIL } from "@graphql/graphql.query";
-import { PostDetailType } from "@interface/data";
+import { PostDetailType, PostType } from "@interface/data";
 import { BlogSeo } from "@components/MetaData/SEO";
 import { z } from "zod";
 
 type PostDetailProps = z.infer<typeof PostDetailType>;
+type PostProps = z.infer<typeof PostType>;
 
 interface ParamsProps {
   params: {
@@ -41,13 +42,15 @@ export default function Article({ post }: PostDetailProps) {
 }
 
 export async function getStaticPaths() {
-  const { data } = await client.query({
+  const { data } = await client.query<PostProps>({
     query: QUERY_POSTS,
   });
 
-  const paths = data?.postsConnection?.edges?.map((edge) => ({
+  const { edges } = data.postsConnection || {};
+
+  const paths = edges.map(({ node }) => ({
     params: {
-      slug: [edge.node.slug],
+      slug: [node.slug],
     },
   }));
 
@@ -61,16 +64,18 @@ export async function getStaticProps({ params }: ParamsProps) {
   // get slug from params
   const slug = params.slug[0];
 
-  const { data } = await client.query({
+  const { data } = await client.query<PostDetailProps>({
     query: QUERY_POSTS_DETAIL,
     variables: {
       slug,
     },
   });
 
+  const { post } = data || {};
+
   return {
     props: {
-      post: data?.post,
+      post: post,
     },
   };
 }

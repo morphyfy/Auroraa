@@ -52,7 +52,7 @@ const Blog = ({ postsConnection }: PostProps) => {
 export default Blog;
 
 export async function getServerSideProps() {
-  const { data } = await client.query({
+  const { data } = await client.query<PostProps>({
     query: QUERY_POSTS,
     variables: {
       first: 100,
@@ -60,9 +60,11 @@ export async function getServerSideProps() {
     },
   });
 
+  const { postsConnection } = data || {};
+
   return {
     props: {
-      postsConnection: data?.postsConnection,
+      postsConnection: postsConnection,
     },
   };
 }

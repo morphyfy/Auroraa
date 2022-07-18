@@ -6,7 +6,7 @@ type ContactProps = {
   className?: React.ReactNode;
   href: string;
   title: string;
-  icon: React.ReactElement<SVGElement>;
+  icon?: React.ReactElement<SVGElement>;
 };
 
 export function Contact({ href, icon, className, title }: ContactProps) {
